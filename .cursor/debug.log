@@ -1,0 +1,379 @@
+{"location":"main.cpp:1202","message":"bno055_init_time_ms SET in setup()","data":{"init_time_ms":4291,"grace_period_ms":3000},"timestamp":4291,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status FIRST CALL","data":{"init_time_ms":4291,"now_ms":9258,"grace_period_ms":3000},"timestamp":9258,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":9258,"elapsed_ms":4967},"timestamp":9275,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":9495,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":1},"timestamp":9512,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":9528,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":9550,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":9602,"grace_period_ms":3000},"timestamp":9602,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":9602,"elapsed_ms":5311},"timestamp":9619,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":9839,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":9856,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":9872,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":9885,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":9938,"grace_period_ms":3000},"timestamp":9938,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":9938,"elapsed_ms":5647},"timestamp":9955,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":10176,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":10193,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":10209,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":10222,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":10276,"grace_period_ms":3000},"timestamp":10276,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":10276,"elapsed_ms":5985},"timestamp":10293,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":10514,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":10531,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":10547,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":10560,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":10613,"grace_period_ms":3000},"timestamp":10613,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":10613,"elapsed_ms":6322},"timestamp":10630,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":10850,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":10867,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":10883,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":10896,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":10950,"grace_period_ms":3000},"timestamp":10950,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":10950,"elapsed_ms":6659},"timestamp":10967,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":11187,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":11204,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":11220,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":11233,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":11284,"grace_period_ms":3000},"timestamp":11284,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":11284,"elapsed_ms":6993},"timestamp":11301,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":11521,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":11538,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":11554,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":11567,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":11619,"grace_period_ms":3000},"timestamp":11619,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":11619,"elapsed_ms":7328},"timestamp":11636,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":11856,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":11873,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":11889,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":11902,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":11955,"grace_period_ms":3000},"timestamp":11955,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":11955,"elapsed_ms":7664},"timestamp":11972,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":12194,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":12211,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":12227,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":12240,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":12293,"grace_period_ms":3000},"timestamp":12293,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":12293,"elapsed_ms":8002},"timestamp":12310,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":12530,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":12547,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":12563,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":12576,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":12628,"grace_period_ms":3000},"timestamp":12628,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":12628,"elapsed_ms":8337},"timestamp":12645,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":12865,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":12882,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":12898,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":12911,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":12983,"grace_period_ms":3000},"timestamp":12983,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":12983,"elapsed_ms":8692},"timestamp":13000,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":13222,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":13239,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":13255,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":13268,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":13345,"grace_period_ms":3000},"timestamp":13345,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":13345,"elapsed_ms":9054},"timestamp":13362,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":13584,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":13601,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":13617,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":13630,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":13736,"grace_period_ms":3000},"timestamp":13737,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":13736,"elapsed_ms":9445},"timestamp":13754,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":13974,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":13991,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":14007,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":14020,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":14180,"grace_period_ms":3000},"timestamp":14181,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":14180,"elapsed_ms":9889},"timestamp":14198,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":14419,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":14436,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":14452,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":14465,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":14546,"grace_period_ms":3000},"timestamp":14546,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":14546,"elapsed_ms":10255},"timestamp":14563,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":14785,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":14802,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":14818,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":14831,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":14996,"grace_period_ms":3000},"timestamp":14997,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":14996,"elapsed_ms":10705},"timestamp":15014,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":15234,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":15251,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":15267,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":15280,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":15369,"grace_period_ms":3000},"timestamp":15369,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":15369,"elapsed_ms":11078},"timestamp":15386,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":15607,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":15624,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":15640,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":15653,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":15866,"grace_period_ms":3000},"timestamp":15866,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":15866,"elapsed_ms":11575},"timestamp":15883,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":16105,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":16122,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":16138,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":16151,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":16249,"grace_period_ms":3000},"timestamp":16249,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":16249,"elapsed_ms":11958},"timestamp":16266,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":16488,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":16505,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":16521,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":16534,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":16602,"grace_period_ms":3000},"timestamp":16602,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":16602,"elapsed_ms":12311},"timestamp":16619,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":16841,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":16858,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":16874,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":16887,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":17049,"grace_period_ms":3000},"timestamp":17049,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":17049,"elapsed_ms":12758},"timestamp":17066,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":17287,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":17304,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":17320,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":17333,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":17426,"grace_period_ms":3000},"timestamp":17427,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":17426,"elapsed_ms":13135},"timestamp":17444,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":17665,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":17682,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":17698,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":17711,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":17861,"grace_period_ms":3000},"timestamp":17861,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":17861,"elapsed_ms":13570},"timestamp":17878,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":18100,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":18117,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":18133,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":18146,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":18227,"grace_period_ms":3000},"timestamp":18227,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":18227,"elapsed_ms":13936},"timestamp":18244,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":18465,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":18482,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":18498,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":18511,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":18590,"grace_period_ms":3000},"timestamp":18590,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":18590,"elapsed_ms":14299},"timestamp":18607,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":18828,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":18845,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":18861,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":18874,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":18960,"grace_period_ms":3000},"timestamp":18960,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":18960,"elapsed_ms":14669},"timestamp":18977,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":19199,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":19216,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":19232,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":19245,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":19314,"grace_period_ms":3000},"timestamp":19314,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":19314,"elapsed_ms":15023},"timestamp":19331,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":19553,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":1},"timestamp":19570,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":19587,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":19608,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":19684,"grace_period_ms":3000},"timestamp":19684,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":19684,"elapsed_ms":15393},"timestamp":19701,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":19921,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":19938,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":19954,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":19967,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":20038,"grace_period_ms":3000},"timestamp":20038,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":20038,"elapsed_ms":15747},"timestamp":20056,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":20276,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":20293,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":20309,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":20322,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":20392,"grace_period_ms":3000},"timestamp":20392,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":20392,"elapsed_ms":16101},"timestamp":20409,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":20630,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":20647,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":20663,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":20676,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":20750,"grace_period_ms":3000},"timestamp":20751,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":20750,"elapsed_ms":16459},"timestamp":20768,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":20988,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":21005,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":21021,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":21034,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":21144,"grace_period_ms":3000},"timestamp":21145,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":21144,"elapsed_ms":16853},"timestamp":21162,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":21382,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":21399,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":21415,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":21428,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":21521,"grace_period_ms":3000},"timestamp":21521,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":21521,"elapsed_ms":17230},"timestamp":21538,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":21760,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":21777,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":21793,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":21806,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":21929,"grace_period_ms":3000},"timestamp":21929,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":21929,"elapsed_ms":17638},"timestamp":21946,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":22166,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":22183,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":22199,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":22212,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":22287,"grace_period_ms":3000},"timestamp":22287,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":22287,"elapsed_ms":17996},"timestamp":22304,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":22526,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":22543,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":22559,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":22572,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":22668,"grace_period_ms":3000},"timestamp":22669,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":22668,"elapsed_ms":18377},"timestamp":22686,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":22907,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":22924,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":22940,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":22953,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":23057,"grace_period_ms":3000},"timestamp":23057,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":23057,"elapsed_ms":18766},"timestamp":23074,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":23295,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":23312,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":23328,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":23341,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":23407,"grace_period_ms":3000},"timestamp":23407,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":23407,"elapsed_ms":19116},"timestamp":23424,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":23646,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":23663,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":23679,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":23692,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":23766,"grace_period_ms":3000},"timestamp":23767,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":23766,"elapsed_ms":19475},"timestamp":23784,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":24004,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":24021,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":24037,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":24050,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":24120,"grace_period_ms":3000},"timestamp":24121,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":24120,"elapsed_ms":19829},"timestamp":24138,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":24358,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":24375,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":24391,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":24404,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":24488,"grace_period_ms":3000},"timestamp":24488,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":24488,"elapsed_ms":20197},"timestamp":24505,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":24726,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":24743,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":24759,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":24772,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":24837,"grace_period_ms":3000},"timestamp":24838,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":24837,"elapsed_ms":20546},"timestamp":24855,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":25076,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":25093,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":25110,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":25122,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":25209,"grace_period_ms":3000},"timestamp":25210,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":25209,"elapsed_ms":20918},"timestamp":25227,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":25448,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":25465,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":25481,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":25494,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":25565,"grace_period_ms":3000},"timestamp":25565,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":25565,"elapsed_ms":21274},"timestamp":25582,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":25804,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":25821,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":25837,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":25850,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":25913,"grace_period_ms":3000},"timestamp":25914,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":25913,"elapsed_ms":21622},"timestamp":25931,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":26151,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":26168,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":26184,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":26197,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":26387,"grace_period_ms":3000},"timestamp":26388,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":26387,"elapsed_ms":22096},"timestamp":26405,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":26625,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":26642,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":26658,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":26671,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":26736,"grace_period_ms":3000},"timestamp":26736,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":26736,"elapsed_ms":22445},"timestamp":26753,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":26974,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":26991,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":27007,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":27020,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":27146,"grace_period_ms":3000},"timestamp":27146,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":27146,"elapsed_ms":22855},"timestamp":27163,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":27384,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":27401,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":27417,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":27430,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":27497,"grace_period_ms":3000},"timestamp":27498,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":27497,"elapsed_ms":23206},"timestamp":27515,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":27735,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":27752,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":27769,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":27781,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":27859,"grace_period_ms":3000},"timestamp":27859,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":27859,"elapsed_ms":23568},"timestamp":27876,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":28096,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":28113,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":28129,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":28142,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":28305,"grace_period_ms":3000},"timestamp":28306,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":28305,"elapsed_ms":24014},"timestamp":28323,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":28543,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":28560,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":28576,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":28589,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":28689,"grace_period_ms":3000},"timestamp":28689,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":28689,"elapsed_ms":24398},"timestamp":28706,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":28928,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":28945,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":28961,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":28974,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":29098,"grace_period_ms":3000},"timestamp":29098,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":29098,"elapsed_ms":24807},"timestamp":29115,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":29335,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":29352,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":29368,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":29381,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":29456,"grace_period_ms":3000},"timestamp":29456,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":29456,"elapsed_ms":25165},"timestamp":29473,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":29694,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":1},"timestamp":29711,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":29728,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":29749,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":29821,"grace_period_ms":3000},"timestamp":29821,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":29821,"elapsed_ms":25530},"timestamp":29838,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":30059,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":30076,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":30092,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":30105,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":30176,"grace_period_ms":3000},"timestamp":30176,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":30176,"elapsed_ms":25885},"timestamp":30193,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":30413,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":30430,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":30446,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":30459,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":30531,"grace_period_ms":3000},"timestamp":30532,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":30531,"elapsed_ms":26240},"timestamp":30549,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":30770,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":30787,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":30803,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":30816,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":30892,"grace_period_ms":3000},"timestamp":30892,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":30892,"elapsed_ms":26601},"timestamp":30909,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":31129,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":31146,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":31162,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":31175,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":31247,"grace_period_ms":3000},"timestamp":31248,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":31247,"elapsed_ms":26956},"timestamp":31265,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":31486,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":31503,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":31519,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":31532,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":31609,"grace_period_ms":3000},"timestamp":31610,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":31609,"elapsed_ms":27318},"timestamp":31627,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":31847,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":31864,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":31880,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":31893,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":31984,"grace_period_ms":3000},"timestamp":31985,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":31984,"elapsed_ms":27693},"timestamp":32002,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":32222,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":32239,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":32255,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":32268,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:162","message":"check_bno055_status ENTRY","data":{"init_time_ms":4291,"now_ms":32339,"grace_period_ms":3000},"timestamp":32339,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:165","message":"Grace period check","data":{"in_grace_period":0,"init_time_ms":4291,"now_ms":32339,"elapsed_ms":28048},"timestamp":32356,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:177","message":"Status read BEFORE retry","data":{"sys_status":5,"self_test":15,"error":0,"error_hex":"0x00"},"timestamp":32577,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:193","message":"Error detection check","data":{"error_detected":0,"consecutive_errors":0,"should_log":0},"timestamp":32594,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:228","message":"Status check PASSING","data":{"result":"PASS"},"timestamp":32610,"sessionId":"debug-session","runId":"run1"}
+{"location":"main.cpp:1035","message":"Status check result in timer callback","data":{"status_ok":1},"timestamp":32623,"sessionId":"debug-session","runId":"run1"}

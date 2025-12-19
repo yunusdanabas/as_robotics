@@ -1,0 +1,206 @@
+/*
+ * ESP32 IMU Master Device - BNO055 with micro-ROS
+ * 
+ * This firmware reads orientation data from a BNO055 IMU sensor
+ * and publishes it via micro-ROS to a ROS 2 network.
+ * 
+ * Hardware:
+ * - WEMOS D1 R32 (ESP32)
+ * - DFRobot Gravity BNO055 + BMP280 (SEN0253)
+ * 
+ * Wiring:
+ * - BNO055 SDA -> GPIO21 (ESP32 default I2C SDA)
+ * - BNO055 SCL -> GPIO22 (ESP32 default I2C SCL)
+ * - BNO055 VCC -> 3.3V
+ * - BNO055 GND -> GND
+ */
+
+ #include <Arduino.h>
+ #include <Wire.h>
+ #include <Adafruit_Sensor.h>
+ #include <Adafruit_BNO055.h>
+ #include <utility/imumaths.h>
+ 
+ #include <micro_ros_platformio.h>
+ #include <rcl/rcl.h>
+ #include <rclc/rclc.h>
+ #include <rclc/executor.h>
+ #include <sensor_msgs/msg/imu.h>
+ 
+ // micro-ROS objects
+ rcl_publisher_t publisher;
+ sensor_msgs__msg__Imu imu_msg;
+ rclc_executor_t executor;
+ rclc_support_t support;
+ rcl_allocator_t allocator;
+ rcl_node_t node;
+ rcl_timer_t timer;
+ 
+ // BNO055 sensor object (using default I2C address 0x28)
+ Adafruit_BNO055 bno = Adafruit_BNO055(55, 0x28);
+ 
+ // Status variables
+ bool sensor_initialized = false;
+ bool micro_ros_initialized = false;
+ 
+ // LED pin for status indication
+ const int LED_PIN = 2; // Built-in LED on ESP32
+ 
+ // Error macro
+ #define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){error_loop();}}
+ #define RCSOFTCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){}}
+ 
+ // Error handling function
+ void error_loop() {
+   while(1) {
+     digitalWrite(LED_PIN, HIGH);
+     delay(100);
+     digitalWrite(LED_PIN, LOW);
+     delay(100);
+   }
+ }
+ 
+ // Timer callback - publishes IMU data
+ void timer_callback(rcl_timer_t * timer, int64_t last_call_time) {
+   RCLC_UNUSED(last_call_time);
+   
+   if (timer != NULL && sensor_initialized) {
+     // Get quaternion data from BNO055
+     imu::Quaternion quat = bno.getQuat();
+     
+     // Get angular velocity (gyroscope)
+     imu::Vector<3> gyro = bno.getVector(Adafruit_BNO055::VECTOR_GYROSCOPE);
+     
+     // Get linear acceleration
+     imu::Vector<3> accel = bno.getVector(Adafruit_BNO055::VECTOR_LINEARACCEL);
+     
+     // Fill the IMU message
+     imu_msg.header.stamp.sec = rmw_uros_epoch_millis() / 1000;
+     imu_msg.header.stamp.nanosec = (rmw_uros_epoch_millis() % 1000) * 1000000;
+     imu_msg.header.frame_id.data = (char*)"imu_link";
+     imu_msg.header.frame_id.size = strlen("imu_link");
+     
+     // Orientation (quaternion)
+     imu_msg.orientation.x = quat.x();
+     imu_msg.orientation.y = quat.y();
+     imu_msg.orientation.z = quat.z();
+     imu_msg.orientation.w = quat.w();
+     
+     // Angular velocity (rad/s)
+     imu_msg.angular_velocity.x = gyro.x();
+     imu_msg.angular_velocity.y = gyro.y();
+     imu_msg.angular_velocity.z = gyro.z();
+     
+     // Linear acceleration (m/s^2)
+     imu_msg.linear_acceleration.x = accel.x();
+     imu_msg.linear_acceleration.y = accel.y();
+     imu_msg.linear_acceleration.z = accel.z();
+     
+     // Publish the message
+     RCSOFTCHECK(rcl_publish(&publisher, &imu_msg, NULL));
+     
+     // Blink LED to show activity
+     digitalWrite(LED_PIN, !digitalRead(LED_PIN));
+   }
+ }
+ 
+ void setup() {
+   // Initialize serial for debugging
+   Serial.begin(115200);
+   delay(2000); // Wait for serial to initialize
+   
+   Serial.println("ESP32 IMU Master - BNO055 + micro-ROS");
+   Serial.println("=====================================");
+   
+   // Initialize LED pin
+   pinMode(LED_PIN, OUTPUT);
+   digitalWrite(LED_PIN, LOW);
+   
+   // Initialize I2C
+   Wire.begin();
+   
+   // Initialize BNO055 sensor
+   Serial.println("Initializing BNO055 sensor...");
+   if (!bno.begin()) {
+     Serial.println("ERROR: No BNO055 detected. Check wiring!");
+     while (1) {
+       digitalWrite(LED_PIN, HIGH);
+       delay(500);
+       digitalWrite(LED_PIN, LOW);
+       delay(500);
+     }
+   }
+   
+   delay(1000);
+   bno.setExtCrystalUse(true);
+   sensor_initialized = true;
+   Serial.println("BNO055 initialized successfully!");
+   
+   // Display sensor details
+   sensor_t sensor;
+   bno.getSensor(&sensor);
+   Serial.println("------------------------------------");
+   Serial.print("Sensor:       "); Serial.println(sensor.name);
+   Serial.print("Driver Ver:   "); Serial.println(sensor.version);
+   Serial.print("Unique ID:    "); Serial.println(sensor.sensor_id);
+   Serial.print("Max Value:    "); Serial.print(sensor.max_value); Serial.println(" xxx");
+   Serial.print("Min Value:    "); Serial.print(sensor.min_value); Serial.println(" xxx");
+   Serial.print("Resolution:   "); Serial.print(sensor.resolution); Serial.println(" xxx");
+   Serial.println("------------------------------------");
+   
+   // Set up micro-ROS serial transport
+   Serial.println("Setting up micro-ROS serial transport...");
+   set_microros_serial_transports(Serial);
+   
+   delay(2000);
+   
+   // Initialize micro-ROS
+   Serial.println("Initializing micro-ROS...");
+   allocator = rcl_get_default_allocator();
+   
+   // Create init_options
+   RCCHECK(rclc_support_init(&support, 0, NULL, &allocator));
+   
+   // Create node
+   RCCHECK(rclc_node_init_default(&node, "esp32_imu_master", "", &support));
+   
+   // Create publisher
+   RCCHECK(rclc_publisher_init_default(
+     &publisher,
+     &node,
+     ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Imu),
+     "imu_data"));
+   
+   // Create timer (publish at 20 Hz)
+   const unsigned int timer_timeout = 50; // 50ms = 20Hz
+   RCCHECK(rclc_timer_init_default(
+     &timer,
+     &support,
+     RCL_MS_TO_NS(timer_timeout),
+     timer_callback));
+   
+   // Create executor
+   RCCHECK(rclc_executor_init(&executor, &support.context, 1, &allocator));
+   RCCHECK(rclc_executor_add_timer(&executor, &timer));
+   
+   micro_ros_initialized = true;
+   Serial.println("micro-ROS initialized successfully!");
+   Serial.println("Publishing IMU data to topic: /imu_data");
+   Serial.println("Ready to communicate with micro-ROS agent!");
+   Serial.println("=====================================");
+   
+   // Steady LED on to indicate ready state
+   digitalWrite(LED_PIN, HIGH);
+   delay(1000);
+ }
+ 
+ void loop() {
+   if (micro_ros_initialized) {
+     // Execute callbacks
+     RCSOFTCHECK(rclc_executor_spin_some(&executor, RCL_MS_TO_NS(10)));
+   }
+   
+   delay(10);
+ }
+ 
+ 

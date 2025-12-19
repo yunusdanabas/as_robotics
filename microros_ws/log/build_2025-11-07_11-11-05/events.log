@@ -1,0 +1,84 @@
+[0.000000] (-) TimerEvent: {}
+[0.000142] (-) JobUnselected: {'identifier': 'drive_base_msgs'}
+[0.000196] (-) JobUnselected: {'identifier': 'micro_ros_setup'}
+[0.000231] (micro_ros_msgs) JobQueued: {'identifier': 'micro_ros_msgs', 'dependencies': OrderedDict()}
+[0.000263] (micro_ros_agent) JobQueued: {'identifier': 'micro_ros_agent', 'dependencies': OrderedDict({'micro_ros_msgs': '/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_msgs'})}
+[0.001179] (micro_ros_msgs) JobStarted: {'identifier': 'micro_ros_msgs'}
+[0.012209] (micro_ros_msgs) JobProgress: {'identifier': 'micro_ros_msgs', 'progress': 'cmake'}
+[0.012914] (micro_ros_msgs) Command: {'cmd': ['/usr/bin/cmake', '/home/yunusdanabas/as_robotics/microros_ws/src/uros/micro_ros_msgs', '-DUAGENT_BUILD_EXECUTABLE=OFF', '-DUAGENT_P2P_PROFILE=OFF', '--no-warn-unused-cli', '-DCMAKE_INSTALL_PREFIX=/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_msgs'], 'cwd': '/home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_msgs', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/yunusdanabas', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'CONDA_PROMPT_MODIFIER': '(base)', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'yunusdanabas', 'LC_TIME': 'tr_TR.UTF-8', 'VSCODE_NLS_CONFIG': '{"userLocale":"en-us","osLocale":"en-us","resolvedLanguage":"en","defaultMessagesFile":"/usr/share/cursor/resources/app/out/nls.messages.json","locale":"en-us","availableLanguages":{}}', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/yunusdanabas', 'CHROME_DESKTOP': 'cursor.desktop', 'CONDA_SHLVL': '1', 'OLDPWD': '/home/yunusdanabas/as_robotics/microros_ws', 'DESKTOP_SESSION': 'ubuntu', 'NVM_BIN': '/home/yunusdanabas/.nvm/versions/node/v22.17.1/bin', 'NVM_INC': '/home/yunusdanabas/.nvm/versions/node/v22.17.1/include/node', 'VSCODE_IPC_HOOK': '/run/user/1000/vscode-baea8b7b-2.0.-main.sock', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/cursor.desktop', 'APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL': '1', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'tr_TR.UTF-8', 'MANAGERPID': '2697', 'SYSTEMD_EXEC_PID': '3002', 'IM_CONFIG_CHECK_ENV': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'NO_COLOR': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '51617', 'NVM_DIR': '/home/yunusdanabas/.nvm', 'VSCODE_CRASH_REPORTER_PROCESS_TYPE': 'extensionHost', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/yunusdanabas/as_robotics/microros_ws/install:/home/yunusdanabas/ros_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'yunusdanabas', 'FORCE_COLOR': '0', 'JOURNAL_STREAM': '8:24920', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'APPLICATIONINSIGHTS_CONFIGURATION_CONTENT': '{}', 'USERNAME': 'yunusdanabas', 'TERM': 'dumb', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'COMPOSER_NO_INTERACTION': '1', 'PATH': '/home/yunusdanabas/.local/bin:/home/yunusdanabas/.local/bin:/home/yunusdanabas/.gem/bin:/home/yunusdanabas/mamba/bin:/home/yunusdanabas/.local/bin:/home/yunusdanabas/.nvm/versions/node/v22.17.1/bin:/home/yunusdanabas/.gem/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/yunusdanabas/mambaforge/bin:/home/yunusdanabas/mambaforge/condabin:/home/yunusdanabas/mamba/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/yunusdanabas:@/tmp/.ICE-unix/2967,unix/yunusdanabas:/tmp/.ICE-unix/2967', 'INVOCATION_ID': '57581e4b92054fe4a9a17148b57720c6', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'tr_TR.UTF-8', 'VSCODE_PROCESS_TITLE': 'extension-host  [1-1]', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'MAMBA_ROOT_PREFIX': '/home/yunusdanabas/mambaforge', 'CURSOR_AGENT': '1', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'Unity', 'LC_TELEPHONE': 'tr_TR.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.8ZYKF3', 'LS_COLORS': '', 'SBX_CHROME_API_RQ': '1', 'CURSOR_TRACE_ID': 'd6e3589b80e34e24af74d6fdb6238dc8', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'XML_CATALOG_FILES': 'file:///home/yunusdanabas/mambaforge/etc/xml/catalog file:///etc/xml/catalog', 'AMENT_PREFIX_PATH': '/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_setup:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/yunusdanabas/mambaforge/bin/python', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'SHELL': '/bin/bash', 'LC_NAME': 'tr_TR.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'GEM_HOME': '/home/yunusdanabas/.gem', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CONDA_DEFAULT_ENV': 'base', 'LC_MEASUREMENT': 'tr_TR.UTF-8', 'GJS_DEBUG_OUTPUT': 'stderr', 'MAMBA_EXE': '/home/yunusdanabas/mambaforge/bin/mamba', 'LC_IDENTIFICATION': 'tr_TR.UTF-8', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_msgs', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/yunusdanabas/mambaforge/bin/conda', 'VSCODE_CODE_CACHE_PATH': '/home/yunusdanabas/.config/Cursor/CachedData/25412918da7e74b2686b25d62da1f01cfcd27680', 'NVM_CD_FLAGS': '', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'LC_NUMERIC': 'tr_TR.UTF-8', 'CONDA_PREFIX': '/home/yunusdanabas/mambaforge', 'LC_PAPER': 'tr_TR.UTF-8', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_setup:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy', 'VSCODE_PID': '51617'}), 'shell': False}
+[0.092967] (micro_ros_msgs) StdoutLine: {'line': b'Not searching for unused variables given on the command line.\n'}
+[0.093280] (micro_ros_msgs) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.099480] (-) TimerEvent: {}
+[0.170907] (micro_ros_msgs) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.192593] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.199948] (-) TimerEvent: {}
+[0.300260] (-) TimerEvent: {}
+[0.313863] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.336639] (micro_ros_msgs) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.336898] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.337354] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.349380] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.400384] (-) TimerEvent: {}
+[0.472286] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.486296] (micro_ros_msgs) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.486625] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.487233] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.493273] (micro_ros_msgs) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.500540] (-) TimerEvent: {}
+[0.600727] (-) TimerEvent: {}
+[0.644065] (micro_ros_msgs) StdoutLine: {'line': b'-- Found Python3: /home/yunusdanabas/mambaforge/bin/python3 (found version "3.12.11") found components: Interpreter \n'}
+[0.700909] (-) TimerEvent: {}
+[0.801128] (-) TimerEvent: {}
+[0.822062] (micro_ros_msgs) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)\n'}
+[0.836096] (micro_ros_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.901261] (-) TimerEvent: {}
+[1.002451] (-) TimerEvent: {}
+[1.039660] (micro_ros_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.102648] (-) TimerEvent: {}
+[1.205625] (-) TimerEvent: {}
+[1.245121] (micro_ros_msgs) StdoutLine: {'line': b'-- Found rosidl_adapter: 4.6.6 (/opt/ros/jazzy/share/rosidl_adapter/cmake)\n'}
+[1.259581] (micro_ros_msgs) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[1.305760] (-) TimerEvent: {}
+[1.405962] (-) TimerEvent: {}
+[1.506159] (-) TimerEvent: {}
+[1.606331] (-) TimerEvent: {}
+[1.687804] (micro_ros_msgs) StderrLine: {'line': b'CMake Error at /opt/ros/jazzy/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:57 (message):\n'}
+[1.688081] (micro_ros_msgs) StderrLine: {'line': b'  execute_process(/home/yunusdanabas/mambaforge/bin/python3 -m rosidl_adapter\n'}
+[1.688182] (micro_ros_msgs) StderrLine: {'line': b'  --package-name micro_ros_msgs --arguments-file\n'}
+[1.688270] (micro_ros_msgs) StderrLine: {'line': b'  /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_msgs/rosidl_adapter__arguments__micro_ros_msgs.json\n'}
+[1.688356] (micro_ros_msgs) StderrLine: {'line': b'  --output-dir\n'}
+[1.688440] (micro_ros_msgs) StderrLine: {'line': b'  /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_msgs/rosidl_adapter/micro_ros_msgs\n'}
+[1.688545] (micro_ros_msgs) StderrLine: {'line': b'  --output-file\n'}
+[1.688762] (micro_ros_msgs) StderrLine: {'line': b'  /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_msgs/rosidl_adapter/micro_ros_msgs.idls)\n'}
+[1.688896] (micro_ros_msgs) StderrLine: {'line': b'  returned error code 1:\n'}
+[1.688983] (micro_ros_msgs) StderrLine: {'line': b'\n'}
+[1.689069] (micro_ros_msgs) StderrLine: {'line': b'  Traceback (most recent call last):\n'}
+[1.689169] (micro_ros_msgs) StderrLine: {'line': b'\n'}
+[1.689326] (micro_ros_msgs) StderrLine: {'line': b'    File "<frozen runpy>", line 198, in _run_module_as_main\n'}
+[1.689418] (micro_ros_msgs) StderrLine: {'line': b'    File "<frozen runpy>", line 88, in _run_code\n'}
+[1.689514] (micro_ros_msgs) StderrLine: {'line': b'    File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/__main__.py", line 19, in <module>\n'}
+[1.689598] (micro_ros_msgs) StderrLine: {'line': b'      sys.exit(main())\n'}
+[1.689676] (micro_ros_msgs) StderrLine: {'line': b'               ^^^^^^\n'}
+[1.689752] (micro_ros_msgs) StderrLine: {'line': b'    File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/main.py", line 53, in main\n'}
+[1.689830] (micro_ros_msgs) StderrLine: {'line': b'      abs_idl_file = convert_to_idl(\n'}
+[1.689906] (micro_ros_msgs) StderrLine: {'line': b'                     ^^^^^^^^^^^^^^^\n'}
+[1.689983] (micro_ros_msgs) StderrLine: {'line': b'    File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/__init__.py", line 18, in convert_to_idl\n'}
+[1.690062] (micro_ros_msgs) StderrLine: {'line': b'      from rosidl_adapter.msg import convert_msg_to_idl\n'}
+[1.690139] (micro_ros_msgs) StderrLine: {'line': b'    File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/msg/__init__.py", line 16, in <module>\n'}
+[1.690215] (micro_ros_msgs) StderrLine: {'line': b'      from rosidl_adapter.resource import expand_template\n'}
+[1.690291] (micro_ros_msgs) StderrLine: {'line': b'    File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/resource/__init__.py", line 19, in <module>\n'}
+[1.690367] (micro_ros_msgs) StderrLine: {'line': b'      import em\n'}
+[1.690443] (micro_ros_msgs) StderrLine: {'line': b'\n'}
+[1.690543] (micro_ros_msgs) StderrLine: {'line': b"  ModuleNotFoundError: No module named 'em'\n"}
+[1.690625] (micro_ros_msgs) StderrLine: {'line': b'\n'}
+[1.690741] (micro_ros_msgs) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[1.690868] (micro_ros_msgs) StderrLine: {'line': b'  /opt/ros/jazzy/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:132 (rosidl_adapt_interfaces)\n'}
+[1.690949] (micro_ros_msgs) StderrLine: {'line': b'  CMakeLists.txt:27 (rosidl_generate_interfaces)\n'}
+[1.691027] (micro_ros_msgs) StderrLine: {'line': b'\n'}
+[1.691103] (micro_ros_msgs) StderrLine: {'line': b'\n'}
+[1.691191] (micro_ros_msgs) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[1.698595] (micro_ros_msgs) CommandEnded: {'returncode': 1}
+[1.706464] (-) TimerEvent: {}
+[1.721612] (micro_ros_msgs) JobEnded: {'identifier': 'micro_ros_msgs', 'rc': 1}
+[1.732028] (micro_ros_agent) JobSkipped: {'identifier': 'micro_ros_agent'}
+[1.732070] (-) EventReactorShutdown: {}

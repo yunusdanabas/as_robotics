@@ -1,0 +1,50 @@
+Project Description: IMU-Based Tele-Imitation Prototype
+1. Project Goal & Vision
+The overarching goal of this project is to develop a "Programming by Demonstration" (PbD) or "Tele-Imitation" system for industrial robots, specifically targeting manipulators like the COMAU robots from your research.
+The primary problem this addresses is the significant complexity and high skill-ceiling of traditional robot programming. Standard teach pendants are excellent for "point-to-point" logic (e.g., move here, grab, move there, release) but are inefficient for tasks that are continuous, path-dependent, or "artistic" in nature. Tasks that are intuitive for a human artisan (like spray painting a complex curve, sanding a piece of furniture, or welding a non-linear seam) become notoriously difficult and time-consuming to program manually.
+This project aims to create the core of an intuitive, next-generation interface. An operator, who may be an expert in their craft but not in robotics, can simply hold a lightweight, ergonomic "master" device and perform the desired motion. The system will capture the intent and nuance of this motion, which can then be captured, refined, and translated into an executable program for an autonomous robot.
+2. Project Scope & Objectives
+This project is focused on designing, building, and validating the most critical component of the entire tele-imitation system: the handheld wireless master device and its real-time data pipeline.
+We will build a complete, end-to-end system that achieves four key objectives:
+    1. Capture Operator Motion: The system must accurately capture the operator's hand orientation (roll, pitch, yaw) in 3D space. This serves as the primary kinesthetic input from the human.
+    2. Process Data Wirelessly: This orientation data must be processed on a lightweight, untethered microcontroller. This is critical for creating an ergonomic, handheld tool that doesn't physically encumber the operator with cables.
+    3. Transmit Data to ROS 2: The processed data must be reliably transmitted over a standard WiFi network to a host computer running the ROS 2 (Robotic Operating System) framework, validating the wireless communication channel.
+    4. Visualize Motion in Real-Time: The orientation data must be used to drive a 3D model in the RViz2 visualization tool. This provides immediate, one-to-one visual feedback, which is essential for the operator to build trust in the system and for developers to debug the data flow.
+Successful completion of this project will validate the core hardware, embedded software, and communication protocols. It will produce the "sensory and communication backbone" required for any future work involving direct robot control.
+3. System Architecture & Data Flow
+We will build a system with two main parts: the Master Device (the handheld hardware) and the Host System (the PC). The communication will be wireless via WiFi, leveraging the powerful pub/sub architecture of the ROS 2 ecosystem.
+Component 1: The Master Device (Hardware)
+    • Microcontroller: ESPDuino-32 (ESP-WROOM-32)
+This is the "brain" of the device. We selected this board for its powerful dual-core processor, integrated WiFi/Bluetooth, and low power consumption. It is more than capable of handling sensor reading, complex fusion calculations (if needed), and high-frequency wireless communication simultaneously.
+    • Sensor: Two Development Paths
+We have two distinct sensor options, which allow for parallel development or a tiered approach:
+        ◦ Option A (Fast-Track / Production Path): DFRobot BNO055.
+This is a "smart" sensor, or Attitude and Heading Reference System (AHRS). It contains an accelerometer, gyroscope, and magnetometer, plus its own dedicated processor running a complex sensor fusion algorithm. It performs all the difficult math on its own chip and directly outputs a stable, drift-corrected orientation (quaternion). This path is simpler and allows us to get the full data pipeline working quickly.
+        ◦ Option B (Learning Path / Research Path): MPU6050 + HMC5883L.
+This is a "raw" sensor board. It provides the raw, unprocessed data from its accelerometer, gyroscope, and magnetometer. This path requires us to write and run our own sensor fusion algorithm (e.g., a Complementary or Madgwick filter) directly on the ESP32. While more difficult, this approach gives us complete control over the filtering, allowing us to tune it for specific needs (e.g., filtering out high-frequency vibrations from a tool).
+    • Power:
+For initial benchtop development and debugging, the device will be powered via USB. For true mobility tests, a small battery pack (e.g., LiPo) will be integrated, making the device fully untethered.
+Component 2: The Host System (Software)
+    • Operating System: Ubuntu 24.04
+    • Robotics Framework: ROS 2 Jazzy Jalisco
+ROS 2 is the industry-standard framework for robotics. Its decentralized, real-time-capable pub/sub architecture is perfect for this project, allowing us to create modular nodes that are decoupled from each other.
+    • Workspace: ~/as_robotics
+    • Visualization Tool: RViz2
+The standard 3D visualization tool for ROS 2. It allows us to subscribe to and display various data types, most importantly coordinate frames (TFs).
+Component 3: The Data Flow (The "Glue")
+This is the step-by-step journey of data from physical motion to digital twin:
+    1. Capture: The operator physically rotates the Master Device. The IMU (BNO055 or MPU6050) captures this motion as a set of electrical signals.
+    2. Process: The ESP32 reads the sensor data via the I2C serial bus.
+        ◦ (If BNO055): The ESP32 simply requests the pre-calculated orientation (quaternion) from the sensor.
+        ◦ (If MPU6050): The ESP32 reads raw data and performs its own sensor fusion calculations to derive a stable orientation (quaternion).
+    3. Transmit (micro-ROS): The ESP32, connected to your local WiFi, publishes this orientation. We use a quaternion—a robust, 4-dimensional mathematical representation of orientation that avoids the "gimbal lock" problem common with Euler angles (roll, pitch, yaw). This is published to a ROS 2 topic (e.g., /imu_pose) using the micro-ROS library, which provides a bridge for resource-constrained microcontrollers to speak the ROS 2 language.
+    4. Receive (ROS 2): A micro-ROS Agent (a simple program) runs on your Host PC. It acts as a proxy, listening on the WiFi network for data from the ESP32, and then re-publishing it as a native ROS 2 topic on the main ros2 network.
+    5. Translate (Custom Node): A custom Python node in our imu_visualization package subscribes to the /imu_pose topic. RViz2 doesn't visualize data topics directly; it visualizes coordinate frames. This node's sole purpose is to "translate" the quaternion data from the topic into a spatial relationship message (a TF transform) that RViz2 understands.
+    6. Visualize (RViz2): We open RViz2 and tell it to display the TF transforms. The result is a 3D set of axes (which we'll call imu_link) in the RViz2 window that perfectly and smoothly mimics the real-world motion of the handheld Master Device, confirming the entire chain is working.
+4. Addressing the 6-DOF Problem (Orientation vs. Position)
+This prototype is intentionally and strategically focused on solving 3-DOF Orientation Tracking ($roll, pitch, yaw$).
+IMUs are excellent at this. However, they are notoriously bad at tracking 3-DOF Position ($x, y, z$). This is due to a fundamental physics problem: to get position, you must integrate acceleration twice (acceleration -> velocity -> position). Even the tiniest, imperceptible measurement error (noise) in the accelerometer, when integrated twice over time, results in a massive, exponential error in the calculated position. This is known as "drift," and it makes IMUs alone unsuitable for stable position tracking.
+Commercial systems, like the TSRC200-7 you researched, solve this by using a hybrid system:
+    • IMU: For orientation (exactly like our prototype).
+    • Draw-Wire Encoders: A mechanical, cable-based system that provides precise, absolute, and drift-free position tracking via triangulation.
+By building this orientation-tracking prototype, we are successfully building the foundational orientation-tracking module. This is the essential first half of a complete, professional-grade tele-imitation system, and it can be integrated with a separate position-tracking solution (like draw-wires, optical tracking, or SLAM) in the future.

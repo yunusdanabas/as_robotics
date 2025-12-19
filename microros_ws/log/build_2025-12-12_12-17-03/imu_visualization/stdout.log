@@ -1,0 +1,58 @@
+running egg_info
+creating ../../build/imu_visualization/imu_visualization.egg-info
+writing ../../build/imu_visualization/imu_visualization.egg-info/PKG-INFO
+writing dependency_links to ../../build/imu_visualization/imu_visualization.egg-info/dependency_links.txt
+writing entry points to ../../build/imu_visualization/imu_visualization.egg-info/entry_points.txt
+writing requirements to ../../build/imu_visualization/imu_visualization.egg-info/requires.txt
+writing top-level names to ../../build/imu_visualization/imu_visualization.egg-info/top_level.txt
+writing manifest file '../../build/imu_visualization/imu_visualization.egg-info/SOURCES.txt'
+reading manifest file '../../build/imu_visualization/imu_visualization.egg-info/SOURCES.txt'
+writing manifest file '../../build/imu_visualization/imu_visualization.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization
+copying imu_visualization/odometry_telemetry.py -> /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization
+copying imu_visualization/imu_fusion_node.py -> /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization
+copying imu_visualization/imu_tf_broadcaster.py -> /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization
+copying imu_visualization/__init__.py -> /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization
+copying imu_visualization/imu_to_euler.py -> /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization
+copying imu_visualization/dual_imu_tf_broadcaster.py -> /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization
+copying imu_visualization/odometry_tf_broadcaster.py -> /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization
+running install
+running install_lib
+creating /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization
+copying /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization/odometry_telemetry.py -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization
+copying /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization/imu_fusion_node.py -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization
+copying /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization/imu_tf_broadcaster.py -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization
+copying /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization/__init__.py -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization
+copying /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization/imu_to_euler.py -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization
+copying /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization/dual_imu_tf_broadcaster.py -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization
+copying /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization/odometry_tf_broadcaster.py -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization
+byte-compiling /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization/odometry_telemetry.py to odometry_telemetry.cpython-312.pyc
+byte-compiling /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization/imu_fusion_node.py to imu_fusion_node.cpython-312.pyc
+byte-compiling /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization/imu_tf_broadcaster.py to imu_tf_broadcaster.cpython-312.pyc
+byte-compiling /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization/imu_to_euler.py to imu_to_euler.cpython-312.pyc
+byte-compiling /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization/dual_imu_tf_broadcaster.py to dual_imu_tf_broadcaster.cpython-312.pyc
+byte-compiling /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization/odometry_tf_broadcaster.py to odometry_tf_broadcaster.cpython-312.pyc
+running install_data
+creating /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/share/ament_index/resource_index/packages
+copying resource/imu_visualization -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/share/ament_index/resource_index/packages
+copying package.xml -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/share/imu_visualization
+creating /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/share/imu_visualization/launch
+copying launch/imu_visualization.launch.py -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/share/imu_visualization/launch
+copying launch/dual_imu.launch.py -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/share/imu_visualization/launch
+creating /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/share/imu_visualization/rviz
+copying rviz/imu_view.rviz -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/share/imu_visualization/rviz
+copying rviz/imu_view_position.rviz -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/share/imu_visualization/rviz
+copying rviz/dual_imu_view.rviz -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/share/imu_visualization/rviz
+running install_egg_info
+Copying ../../build/imu_visualization/imu_visualization.egg-info to /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization-0.0.0-py3.12.egg-info
+running install_scripts
+Installing dual_imu_tf_broadcaster script to /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/imu_visualization
+Installing imu_fusion_node script to /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/imu_visualization
+Installing imu_tf_broadcaster script to /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/imu_visualization
+Installing imu_to_euler script to /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/imu_visualization
+Installing odometry_telemetry script to /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/imu_visualization
+Installing odometry_tf_broadcaster script to /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/imu_visualization
+writing list of installed files to '/home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/install.log'

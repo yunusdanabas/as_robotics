@@ -1,0 +1,59 @@
+Cloning into 'xrceagent'...
+HEAD is now at 7362281 Release v2.4.3
+Cloning into 'spdlog'...
+HEAD is now at eb322062 Bump version to 1.9.2
+CMake Warning at CMakeLists.txt:53 (add_executable):
+  Cannot generate a safe runtime search path for target micro_ros_agent
+  because files in some directories may conflict with libraries in implicit
+  directories:
+
+    runtime library [libssl.so.3] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /home/yunusdanabas/mambaforge/lib
+    runtime library [libcrypto.so.3] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /home/yunusdanabas/mambaforge/lib
+
+  Some of these libraries may not be found correctly.
+
+
+In file included from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/spdlog.h:12,
+                 from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/logger/Logger.hpp:23,
+                 from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/SessionManager.hpp:18,
+                 from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/Server.hpp:20,
+                 from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/utils/ArgumentParser.hpp:24,
+                 from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/AgentInstance.hpp:20,
+                 from /home/yunusdanabas/as_robotics/microros_ws/src/uros/micro-ROS-Agent/micro_ros_agent/include/agent/Agent.hpp:18,
+                 from /home/yunusdanabas/as_robotics/microros_ws/src/uros/micro-ROS-Agent/micro_ros_agent/src/agent/Agent.cpp:18:
+/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/common.h:127:111: error: ‘basic_runtime’ is not a member of ‘fmt’
+  127 |           std::is_convertible<T, fmt::basic_string_view<Char>>::value || std::is_same<remove_cvref_t<T>, fmt::basic_runtime<Char>>::value>
+      |                                                                                                               ^~~~~~~~~~~~~
+/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/common.h:127:125: error: template argument 2 is invalid
+  127 |           std::is_convertible<T, fmt::basic_string_view<Char>>::value || std::is_same<remove_cvref_t<T>, fmt::basic_runtime<Char>>::value>
+      |                                                                                                                             ^~~~
+/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/common.h:127:138: error: expected ‘{’ before ‘>’ token
+  127 |           std::is_convertible<T, fmt::basic_string_view<Char>>::value || std::is_same<remove_cvref_t<T>, fmt::basic_runtime<Char>>::value>
+      |                                                                                                                                          ^
+In file included from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/spdlog.h:12,
+                 from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/logger/Logger.hpp:23,
+                 from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/SessionManager.hpp:18,
+                 from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/Server.hpp:20,
+                 from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/utils/ArgumentParser.hpp:24,
+                 from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/AgentInstance.hpp:20,
+                 from /home/yunusdanabas/as_robotics/microros_ws/src/uros/micro-ROS-Agent/micro_ros_agent/include/agent/Agent.hpp:18,
+                 from /home/yunusdanabas/as_robotics/microros_ws/src/uros/micro-ROS-Agent/micro_ros_agent/src/main.cpp:15:
+/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/common.h:127:111: error: ‘basic_runtime’ is not a member of ‘fmt’
+  127 |           std::is_convertible<T, fmt::basic_string_view<Char>>::value || std::is_same<remove_cvref_t<T>, fmt::basic_runtime<Char>>::value>
+      |                                                                                                               ^~~~~~~~~~~~~
+/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/common.h:127:125: error: template argument 2 is invalid
+  127 |           std::is_convertible<T, fmt::basic_string_view<Char>>::value || std::is_same<remove_cvref_t<T>, fmt::basic_runtime<Char>>::value>
+      |                                                                                                                             ^~~~
+/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/common.h:127:138: error: expected ‘{’ before ‘>’ token
+  127 |           std::is_convertible<T, fmt::basic_string_view<Char>>::value || std::is_same<remove_cvref_t<T>, fmt::basic_runtime<Char>>::value>
+      |                                                                                                                                          ^
+gmake[5]: *** [CMakeFiles/micro_ros_agent.dir/build.make:90: CMakeFiles/micro_ros_agent.dir/src/agent/Agent.cpp.o] Error 1
+gmake[5]: *** Waiting for unfinished jobs....
+gmake[5]: *** [CMakeFiles/micro_ros_agent.dir/build.make:76: CMakeFiles/micro_ros_agent.dir/src/main.cpp.o] Error 1
+gmake[4]: *** [CMakeFiles/Makefile2:137: CMakeFiles/micro_ros_agent.dir/all] Error 2
+gmake[3]: *** [Makefile:146: all] Error 2
+gmake[2]: *** [CMakeFiles/micro_ros_agent.dir/build.make:86: micro_ros_agent-prefix/src/micro_ros_agent-stamp/micro_ros_agent-build] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:111: CMakeFiles/micro_ros_agent.dir/all] Error 2
+gmake: *** [Makefile:91: all] Error 2

@@ -1,0 +1,414 @@
+Processing esp32dev (platform: espressif32; board: esp32dev; framework: arduino)
+--------------------------------------------------------------------------------
+Library Manager: Installing git+https://github.com/micro-ROS/micro_ros_platformio
+git version 2.43.0
+Cloning into '/home/yunusdanabas/.platformio/.cache/tmp/pkg-installing-wa86rng8'...
+Library Manager: micro_ros_platformio@0.0.1+sha.cfee17f has been installed!
+Library Manager: Installing adafruit/Adafruit Unified Sensor @ ^1.1.14
+Downloading 0% 10% 20%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70%
+Library Manager: Adafruit Unified Sensor@1.1.15 has been installed!
+Library Manager: Installing adafruit/Adafruit BNO055 @ ^1.6.3
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Library Manager: Adafruit BNO055@1.6.4 has been installed!
+Library Manager: Resolving dependencies...
+Library Manager: Installing Adafruit BusIO
+Downloading 0% 10% 20% 30%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Library Manager: Adafruit BusIO@1.17.4 has been installed!
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/espressif32/esp32dev.html
+PLATFORM: Espressif 32 (6.12.0) > Espressif ESP32 Dev Module
+HARDWARE: ESP32 240MHz, 320KB RAM, 4MB Flash
+DEBUG: Current (cmsis-dap) External (cmsis-dap, esp-bridge, esp-prog, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)
+PACKAGES: 
+ - framework-arduinoespressif32 @ 3.20017.241212+sha.dcc1105b 
+ - tool-esptoolpy @ 2.40900.250804 (4.9.0) 
+ - toolchain-xtensa-esp32 @ 8.4.0+2021r2-patch5
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Installing colcon-common-extensions with pip at PlatformIO environment
+/home/yunusdanabas/mambaforge/bin/python3 -m pip install colcon-common-extensions
+Collecting colcon-common-extensions
+  Using cached colcon_common_extensions-0.3.0-py3-none-any.whl.metadata (2.0 kB)
+Collecting colcon-cmake (from colcon-common-extensions)
+  Using cached colcon_cmake-0.2.29-py3-none-any.whl.metadata (2.0 kB)
+Collecting colcon-core (from colcon-common-extensions)
+  Using cached colcon_core-0.20.1-py3-none-any.whl.metadata (2.4 kB)
+Collecting colcon-defaults (from colcon-common-extensions)
+  Using cached colcon_defaults-0.2.9-py3-none-any.whl.metadata (2.1 kB)
+Collecting colcon-devtools (from colcon-common-extensions)
+  Using cached colcon_devtools-0.3.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting colcon-library-path (from colcon-common-extensions)
+  Using cached colcon_library_path-0.2.1-py3-none-any.whl.metadata (1.2 kB)
+Collecting colcon-metadata (from colcon-common-extensions)
+  Using cached colcon_metadata-0.2.5-py3-none-any.whl.metadata (1.3 kB)
+Collecting colcon-notification (from colcon-common-extensions)
+  Using cached colcon_notification-0.3.0-py3-none-any.whl.metadata (2.0 kB)
+Collecting colcon-output (from colcon-common-extensions)
+  Using cached colcon_output-0.2.13-py3-none-any.whl.metadata (1.9 kB)
+Collecting colcon-package-information (from colcon-common-extensions)
+  Using cached colcon_package_information-0.4.0-py3-none-any.whl.metadata (2.0 kB)
+Collecting colcon-package-selection (from colcon-common-extensions)
+  Using cached colcon_package_selection-0.2.10-py3-none-any.whl.metadata (1.2 kB)
+Collecting colcon-parallel-executor (from colcon-common-extensions)
+  Using cached colcon_parallel_executor-0.4.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting colcon-powershell (from colcon-common-extensions)
+  Using cached colcon_powershell-0.4.0-py3-none-any.whl.metadata (2.0 kB)
+Collecting colcon-python-setup-py (from colcon-common-extensions)
+  Using cached colcon_python_setup_py-0.2.9-py3-none-any.whl.metadata (2.1 kB)
+Collecting colcon-recursive-crawl (from colcon-common-extensions)
+  Using cached colcon_recursive_crawl-0.2.3-py3-none-any.whl.metadata (1.9 kB)
+Collecting colcon-ros (from colcon-common-extensions)
+  Using cached colcon_ros-0.5.0-py3-none-any.whl.metadata (2.1 kB)
+Collecting colcon-test-result (from colcon-common-extensions)
+  Using cached colcon_test_result-0.3.8-py3-none-any.whl.metadata (1.2 kB)
+Collecting colcon-argcomplete (from colcon-common-extensions)
+  Using cached colcon_argcomplete-0.3.3-py3-none-any.whl.metadata (1.2 kB)
+Collecting colcon-bash (from colcon-common-extensions)
+  Using cached colcon_bash-0.5.0-py3-none-any.whl.metadata (1.8 kB)
+Collecting colcon-cd (from colcon-common-extensions)
+  Using cached colcon_cd-0.1.1-py3-none-any.whl.metadata (1.1 kB)
+Collecting colcon-zsh (from colcon-common-extensions)
+  Using cached colcon_zsh-0.5.0-py3-none-any.whl.metadata (1.8 kB)
+Collecting argcomplete (from colcon-argcomplete->colcon-common-extensions)
+  Using cached argcomplete-3.6.3-py3-none-any.whl.metadata (16 kB)
+Collecting distlib (from colcon-core->colcon-common-extensions)
+  Using cached distlib-0.4.0-py2.py3-none-any.whl.metadata (5.2 kB)
+Requirement already satisfied: EmPy in /home/yunusdanabas/.local/lib/python3.12/site-packages (from colcon-core->colcon-common-extensions) (4.2)
+Requirement already satisfied: packaging in /home/yunusdanabas/mambaforge/lib/python3.12/site-packages (from colcon-core->colcon-common-extensions) (25.0)
+Requirement already satisfied: pytest in /home/yunusdanabas/mambaforge/lib/python3.12/site-packages (from colcon-core->colcon-common-extensions) (8.4.2)
+Collecting pytest-cov (from colcon-core->colcon-common-extensions)
+  Using cached pytest_cov-7.0.0-py3-none-any.whl.metadata (31 kB)
+Collecting pytest-repeat (from colcon-core->colcon-common-extensions)
+  Using cached pytest_repeat-0.9.4-py3-none-any.whl.metadata (4.9 kB)
+Collecting pytest-rerunfailures (from colcon-core->colcon-common-extensions)
+  Using cached pytest_rerunfailures-16.1-py3-none-any.whl.metadata (21 kB)
+Collecting setuptools<80,>=30.3.0 (from colcon-core->colcon-common-extensions)
+  Using cached setuptools-79.0.1-py3-none-any.whl.metadata (6.5 kB)
+Requirement already satisfied: PyYAML in /home/yunusdanabas/mambaforge/lib/python3.12/site-packages (from colcon-defaults->colcon-common-extensions) (6.0.2)
+Collecting notify2 (from colcon-notification->colcon-common-extensions)
+  Using cached notify2-0.3.1-py2.py3-none-any.whl.metadata (2.2 kB)
+Requirement already satisfied: catkin-pkg>=0.4.14 in /home/yunusdanabas/mambaforge/lib/python3.12/site-packages (from colcon-ros->colcon-common-extensions) (1.1.0)
+Collecting colcon-pkg-config (from colcon-ros->colcon-common-extensions)
+  Using cached colcon_pkg_config-0.1.0-py3-none-any.whl.metadata (1.1 kB)
+Requirement already satisfied: docutils in /home/yunusdanabas/mambaforge/lib/python3.12/site-packages (from catkin-pkg>=0.4.14->colcon-ros->colcon-common-extensions) (0.22.2)
+Requirement already satisfied: python-dateutil in /home/yunusdanabas/mambaforge/lib/python3.12/site-packages (from catkin-pkg>=0.4.14->colcon-ros->colcon-common-extensions) (2.9.0.post0)
+Requirement already satisfied: pyparsing in /home/yunusdanabas/mambaforge/lib/python3.12/site-packages (from catkin-pkg>=0.4.14->colcon-ros->colcon-common-extensions) (3.2.5)
+Requirement already satisfied: iniconfig>=1 in /home/yunusdanabas/mambaforge/lib/python3.12/site-packages (from pytest->colcon-core->colcon-common-extensions) (2.1.0)
+Requirement already satisfied: pluggy<2,>=1.5 in /home/yunusdanabas/mambaforge/lib/python3.12/site-packages (from pytest->colcon-core->colcon-common-extensions) (1.6.0)
+Requirement already satisfied: pygments>=2.7.2 in /home/yunusdanabas/mambaforge/lib/python3.12/site-packages (from pytest->colcon-core->colcon-common-extensions) (2.19.2)
+Collecting coverage>=7.10.6 (from coverage[toml]>=7.10.6->pytest-cov->colcon-core->colcon-common-extensions)
+  Using cached coverage-7.11.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (9.0 kB)
+Requirement already satisfied: six>=1.5 in /home/yunusdanabas/mambaforge/lib/python3.12/site-packages (from python-dateutil->catkin-pkg>=0.4.14->colcon-ros->colcon-common-extensions) (1.17.0)
+Using cached colcon_common_extensions-0.3.0-py3-none-any.whl (6.5 kB)
+Using cached colcon_argcomplete-0.3.3-py3-none-any.whl (6.9 kB)
+Using cached argcomplete-3.6.3-py3-none-any.whl (43 kB)
+Using cached colcon_bash-0.5.0-py3-none-any.whl (11 kB)
+Using cached colcon_core-0.20.1-py3-none-any.whl (140 kB)
+Using cached setuptools-79.0.1-py3-none-any.whl (1.3 MB)
+Using cached colcon_cd-0.1.1-py3-none-any.whl (3.6 kB)
+Using cached colcon_cmake-0.2.29-py3-none-any.whl (26 kB)
+Using cached colcon_test_result-0.3.8-py3-none-any.whl (8.5 kB)
+Using cached colcon_defaults-0.2.9-py3-none-any.whl (10.0 kB)
+Using cached colcon_devtools-0.3.0-py3-none-any.whl (10 kB)
+Using cached colcon_library_path-0.2.1-py3-none-any.whl (4.9 kB)
+Using cached colcon_metadata-0.2.5-py3-none-any.whl (19 kB)
+Using cached colcon_notification-0.3.0-py3-none-any.whl (63 kB)
+Using cached colcon_output-0.2.13-py3-none-any.whl (14 kB)
+Using cached colcon_package_information-0.4.0-py3-none-any.whl (15 kB)
+Using cached colcon_package_selection-0.2.10-py3-none-any.whl (16 kB)
+Using cached colcon_parallel_executor-0.4.0-py3-none-any.whl (11 kB)
+Using cached colcon_powershell-0.4.0-py3-none-any.whl (13 kB)
+Using cached colcon_python_setup_py-0.2.9-py3-none-any.whl (11 kB)
+Using cached colcon_recursive_crawl-0.2.3-py3-none-any.whl (8.3 kB)
+Using cached colcon_ros-0.5.0-py3-none-any.whl (28 kB)
+Using cached colcon_pkg_config-0.1.0-py3-none-any.whl (4.5 kB)
+Using cached colcon_zsh-0.5.0-py3-none-any.whl (10 kB)
+Using cached distlib-0.4.0-py2.py3-none-any.whl (469 kB)
+Using cached notify2-0.3.1-py2.py3-none-any.whl (8.0 kB)
+Using cached pytest_cov-7.0.0-py3-none-any.whl (22 kB)
+Using cached coverage-7.11.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (250 kB)
+Using cached pytest_repeat-0.9.4-py3-none-any.whl (4.2 kB)
+Using cached pytest_rerunfailures-16.1-py3-none-any.whl (14 kB)
+Installing collected packages: notify2, distlib, setuptools, coverage, argcomplete, pytest-rerunfailures, pytest-repeat, pytest-cov, colcon-core, colcon-zsh, colcon-test-result, colcon-recursive-crawl, colcon-python-setup-py, colcon-powershell, colcon-pkg-config, colcon-parallel-executor, colcon-package-selection, colcon-package-information, colcon-output, colcon-notification, colcon-metadata, colcon-library-path, colcon-devtools, colcon-defaults, colcon-bash, colcon-argcomplete, colcon-cmake, colcon-cd, colcon-ros, colcon-common-extensions
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 80.9.0
+    Uninstalling setuptools-80.9.0:
+      Successfully uninstalled setuptools-80.9.0
+
+
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+generate-parameter-library-py 0.5.0 requires typeguard, which is not installed.
+ament-black 0.2.6 requires unidiff>=0.5, which is not installed.
+ament-black 0.2.6 requires uvloop==0.17.0, which is not installed.
+ament-black 0.2.6 requires black==21.12b0, but you have black 25.1.0 which is incompatible.
+Successfully installed argcomplete-3.6.3 colcon-argcomplete-0.3.3 colcon-bash-0.5.0 colcon-cd-0.1.1 colcon-cmake-0.2.29 colcon-common-extensions-0.3.0 colcon-core-0.20.1 colcon-defaults-0.2.9 colcon-devtools-0.3.0 colcon-library-path-0.2.1 colcon-metadata-0.2.5 colcon-notification-0.3.0 colcon-output-0.2.13 colcon-package-information-0.4.0 colcon-package-selection-0.2.10 colcon-parallel-executor-0.4.0 colcon-pkg-config-0.1.0 colcon-powershell-0.4.0 colcon-python-setup-py-0.2.9 colcon-recursive-crawl-0.2.3 colcon-ros-0.5.0 colcon-test-result-0.3.8 colcon-zsh-0.5.0 coverage-7.11.0 distlib-0.4.0 notify2-0.3.1 pytest-cov-7.0.0 pytest-repeat-0.9.4 pytest-rerunfailures-16.1 setuptools-79.0.1
+
+[notice] A new release of pip is available: 25.2 -> 25.3
+[notice] To update, run: pip install --upgrade pip
+Installing importlib-resources with pip at PlatformIO environment
+/home/yunusdanabas/mambaforge/bin/python3 -m pip install importlib-resources
+Requirement already satisfied: importlib-resources in /home/yunusdanabas/mambaforge/lib/python3.12/site-packages (6.5.2)
+
+[notice] A new release of pip is available: 25.2 -> 25.3
+[notice] To update, run: pip install --upgrade pip
+Installing pyyaml with pip at PlatformIO environment
+/home/yunusdanabas/mambaforge/bin/python3 -m pip install pyyaml
+Requirement already satisfied: pyyaml in /home/yunusdanabas/mambaforge/lib/python3.12/site-packages (6.0.2)
+
+[notice] A new release of pip is available: 25.2 -> 25.3
+[notice] To update, run: pip install --upgrade pip
+Installing pytz with pip at PlatformIO environment
+/home/yunusdanabas/mambaforge/bin/python3 -m pip install pytz
+Collecting pytz
+  Using cached pytz-2025.2-py2.py3-none-any.whl.metadata (22 kB)
+Using cached pytz-2025.2-py2.py3-none-any.whl (509 kB)
+Installing collected packages: pytz
+Successfully installed pytz-2025.2
+
+[notice] A new release of pip is available: 25.2 -> 25.3
+[notice] To update, run: pip install --upgrade pip
+Installing markupsafe==2.0.1 with pip at PlatformIO environment
+/home/yunusdanabas/mambaforge/bin/python3 -m pip install markupsafe==2.0.1
+Collecting markupsafe==2.0.1
+  Using cached markupsafe-2.0.1-cp312-cp312-linux_x86_64.whl
+Installing collected packages: markupsafe
+  Attempting uninstall: markupsafe
+    Found existing installation: MarkupSafe 3.0.2
+    Uninstalling MarkupSafe-3.0.2:
+      Successfully uninstalled MarkupSafe-3.0.2
+Successfully installed markupsafe-2.0.1
+
+[notice] A new release of pip is available: 25.2 -> 25.3
+[notice] To update, run: pip install --upgrade pip
+Installing empy==3.3.4 with pip at PlatformIO environment
+/home/yunusdanabas/mambaforge/bin/python3 -m pip install empy==3.3.4
+Collecting empy==3.3.4
+  Using cached empy-3.3.4-py3-none-any.whl
+Installing collected packages: empy
+  Attempting uninstall: empy
+    Found existing installation: empy 4.2
+    Uninstalling empy-4.2:
+      Successfully uninstalled empy-4.2
+Successfully installed empy-3.3.4
+
+[notice] A new release of pip is available: 25.2 -> 25.3
+[notice] To update, run: pip install --upgrade pip
+Configuring esp32dev with transport serial
+Downloading micro-ROS dev dependencies
+	 - Downloaded ament_cmake
+	 - Downloaded ament_lint
+	 - Downloaded ament_package
+	 - Downloaded googletest
+	 - Downloaded ament_cmake_ros
+	 - Downloaded ament_index
+Building micro-ROS dev dependencies
+Downloading micro-ROS library
+	 - Downloaded microcdr
+	 - Downloaded microxrcedds_client
+	 - Downloaded rcl_lifecycle
+	 - Downloaded rcl
+	 - Downloaded rcl_yaml_param_parser (ignored)
+	 - Downloaded rcl_action
+	 - Downloaded rclc_lifecycle
+	 - Downloaded rclc_examples (ignored)
+	 - Downloaded rclc
+	 - Downloaded rclc_parameter
+	 - Downloaded micro_ros_utilities
+	 - Downloaded rcutils
+	 - Downloaded micro_ros_msgs
+	 - Downloaded rmw_microxrcedds
+	 - Downloaded rosidl_typesupport_cpp (ignored)
+	 - Downloaded rosidl_typesupport_c
+	 - Downloaded rosidl_typesupport_tests
+	 - Downloaded rosidl_typesupport_microxrcedds_c
+	 - Downloaded rosidl_typesupport_microxrcedds_cpp (ignored)
+	 - Downloaded rosidl_typesupport_microxrcedds_test_msg
+	 - Downloaded rosidl_typesupport_microxrcedds_c_tests
+	 - Downloaded rosidl_typesupport_microxrcedds_cpp_tests
+	 - Downloaded rosidl_generator_cpp (ignored)
+	 - Downloaded rosidl_runtime_cpp (ignored)
+	 - Downloaded rosidl_generator_type_description
+	 - Downloaded rosidl_typesupport_interface
+	 - Downloaded rosidl_parser
+	 - Downloaded rosidl_typesupport_introspection_cpp (ignored)
+	 - Downloaded rosidl_adapter
+	 - Downloaded rosidl_runtime_c
+	 - Downloaded rosidl_generator_tests
+	 - Downloaded rosidl_cli
+	 - Downloaded rosidl_typesupport_introspection_tests
+	 - Downloaded rosidl_cmake
+	 - Downloaded rosidl_generator_c
+	 - Downloaded rosidl_typesupport_introspection_c
+	 - Downloaded rosidl_pycommon
+	 - Downloaded rosidl_dynamic_typesupport
+	 - Downloaded rosidl_core_generators
+	 - Downloaded rosidl_core_runtime
+	 - Downloaded rmw
+	 - Downloaded rmw_implementation_cmake
+	 - Downloaded service_msgs
+	 - Downloaded rcl_interfaces
+	 - Downloaded test_msgs
+	 - Downloaded lifecycle_msgs
+	 - Downloaded type_description_interfaces
+	 - Downloaded action_msgs
+	 - Downloaded statistics_msgs
+	 - Downloaded rosgraph_msgs
+	 - Downloaded composition_interfaces
+	 - Downloaded builtin_interfaces
+	 - Downloaded rosidl_default_runtime
+	 - Downloaded rosidl_default_generators
+	 - Downloaded unique_identifier_msgs
+	 - Downloaded shape_msgs
+	 - Downloaded geometry_msgs
+	 - Downloaded stereo_msgs
+	 - Downloaded std_msgs
+	 - Downloaded sensor_msgs
+	 - Downloaded std_srvs
+	 - Downloaded visualization_msgs
+	 - Downloaded diagnostic_msgs
+	 - Downloaded sensor_msgs_py
+	 - Downloaded actionlib_msgs
+	 - Downloaded trajectory_msgs
+	 - Downloaded common_interfaces
+	 - Downloaded nav_msgs
+	 - Downloaded test_interface_files
+	 - Downloaded test_rmw_implementation
+	 - Downloaded rmw_implementation
+	 - Downloaded rcl_logging_noop
+	 - Downloaded rcl_logging_spdlog (ignored)
+	 - Downloaded rcl_logging_interface
+	 - Downloaded lttngpy (ignored)
+	 - Downloaded test_ros2trace
+	 - Downloaded tracetools_launch
+	 - Downloaded test_tracetools (ignored)
+	 - Downloaded tracetools
+	 - Downloaded test_tracetools_launch
+	 - Downloaded ros2trace
+	 - Downloaded tracetools_test
+	 - Downloaded tracetools_trace
+	 - Downloaded tracetools_read
+Checking extra packages
+Building micro-ROS library
+Found 37 compatible libraries
+Scanning dependencies...
+Dependency Graph
+|-- micro_ros_platformio @ 0.0.1+sha.cfee17f
+|-- Adafruit Unified Sensor @ 1.1.15
+|-- Adafruit BNO055 @ 1.6.4
+|-- Wire @ 2.0.0
+Building in release mode
+Compiling .pio/build/esp32dev/src/main.cpp.o
+Building .pio/build/esp32dev/bootloader.bin
+Generating partitions .pio/build/esp32dev/partitions.bin
+esptool.py v4.9.0
+Creating esp32 image...
+Merged 1 ELF section
+Successfully created esp32 image.
+Compiling .pio/build/esp32dev/lib8d6/micro_ros_platformio/platform_code/arduino/clock_gettime.cpp.o
+Compiling .pio/build/esp32dev/lib8d6/micro_ros_platformio/platform_code/arduino/serial/micro_ros_transport.cpp.o
+Compiling .pio/build/esp32dev/lib2c9/Adafruit Unified Sensor/Adafruit_Sensor.cpp.o
+src/main.cpp: In function 'void setup()':
+src/main.cpp:180:19: warning: 'rcl_ret_t rclc_timer_init_default(rcl_timer_t*, rclc_support_t*, uint64_t, rcl_timer_callback_t)' is deprecated: Call rclc_timer_init_default2 instead [-Wdeprecated-declarations]
+     timer_callback));
+                   ^
+src/main.cpp:50:43: note: in definition of macro 'RCCHECK'
+ #define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){error_loop();}}
+                                           ^~
+In file included from .pio/libdeps/esp32dev/micro_ros_platformio/libmicroros/include/rclc/rclc.h:32,
+                 from src/main.cpp:26:
+.pio/libdeps/esp32dev/micro_ros_platformio/libmicroros/include/rclc/timer.h:63:1: note: declared here
+ rclc_timer_init_default(
+ ^~~~~~~~~~~~~~~~~~~~~~~
+src/main.cpp:180:19: warning: 'rcl_ret_t rclc_timer_init_default(rcl_timer_t*, rclc_support_t*, uint64_t, rcl_timer_callback_t)' is deprecated: Call rclc_timer_init_default2 instead [-Wdeprecated-declarations]
+     timer_callback));
+                   ^
+src/main.cpp:50:43: note: in definition of macro 'RCCHECK'
+ #define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){error_loop();}}
+                                           ^~
+In file included from .pio/libdeps/esp32dev/micro_ros_platformio/libmicroros/include/rclc/rclc.h:32,
+                 from src/main.cpp:26:
+.pio/libdeps/esp32dev/micro_ros_platformio/libmicroros/include/rclc/timer.h:63:1: note: declared here
+ rclc_timer_init_default(
+ ^~~~~~~~~~~~~~~~~~~~~~~
+Compiling .pio/build/esp32dev/lib09b/Wire/Wire.cpp.o
+Compiling .pio/build/esp32dev/lib1ff/SPI/SPI.cpp.o
+Compiling .pio/build/esp32dev/lib886/Adafruit BusIO/Adafruit_BusIO_Register.cpp.o
+Archiving .pio/build/esp32dev/lib8d6/libmicro_ros_platformio.a
+Compiling .pio/build/esp32dev/lib886/Adafruit BusIO/Adafruit_GenericDevice.cpp.o
+Indexing .pio/build/esp32dev/lib8d6/libmicro_ros_platformio.a
+Compiling .pio/build/esp32dev/lib886/Adafruit BusIO/Adafruit_I2CDevice.cpp.o
+Compiling .pio/build/esp32dev/lib886/Adafruit BusIO/Adafruit_SPIDevice.cpp.o
+Compiling .pio/build/esp32dev/lib6f6/Adafruit BNO055/Adafruit_BNO055.cpp.o
+Archiving .pio/build/esp32dev/lib2c9/libAdafruit Unified Sensor.a
+Indexing .pio/build/esp32dev/lib2c9/libAdafruit Unified Sensor.a
+Compiling .pio/build/esp32dev/FrameworkArduino/Esp.cpp.o
+Archiving .pio/build/esp32dev/lib09b/libWire.a
+Indexing .pio/build/esp32dev/lib09b/libWire.a
+Archiving .pio/build/esp32dev/lib1ff/libSPI.a
+Indexing .pio/build/esp32dev/lib1ff/libSPI.a
+Compiling .pio/build/esp32dev/FrameworkArduino/FirmwareMSC.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/FunctionalInterrupt.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/HWCDC.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/HardwareSerial.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/IPAddress.cpp.o
+Archiving .pio/build/esp32dev/lib886/libAdafruit BusIO.a
+Compiling .pio/build/esp32dev/FrameworkArduino/IPv6Address.cpp.o
+Indexing .pio/build/esp32dev/lib886/libAdafruit BusIO.a
+Compiling .pio/build/esp32dev/FrameworkArduino/MD5Builder.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/Print.cpp.o
+Archiving .pio/build/esp32dev/lib6f6/libAdafruit BNO055.a
+Indexing .pio/build/esp32dev/lib6f6/libAdafruit BNO055.a
+Compiling .pio/build/esp32dev/FrameworkArduino/Stream.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/StreamString.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/Tone.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/USB.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/USBCDC.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/USBMSC.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/WMath.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/WString.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/base64.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/cbuf.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-adc.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-bt.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-cpu.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-dac.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-gpio.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-i2c-slave.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-i2c.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-ledc.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-matrix.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-misc.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-psram.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-rgb-led.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-rmt.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-sigmadelta.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-spi.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-time.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-timer.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-tinyusb.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-touch.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-uart.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/firmware_msc_fat.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/libb64/cdecode.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/libb64/cencode.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/main.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/stdlib_noniso.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/wiring_pulse.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/wiring_shift.c.o
+Archiving .pio/build/esp32dev/libFrameworkArduino.a
+Indexing .pio/build/esp32dev/libFrameworkArduino.a
+Linking .pio/build/esp32dev/firmware.elf
+Retrieving maximum program size .pio/build/esp32dev/firmware.elf
+Checking size .pio/build/esp32dev/firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+RAM:   [=         ]  14.7% (used 48176 bytes from 327680 bytes)
+Flash: [===       ]  28.2% (used 369065 bytes from 1310720 bytes)
+Building .pio/build/esp32dev/firmware.bin
+esptool.py v4.9.0
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+======================== [SUCCESS] Took 273.38 seconds ========================

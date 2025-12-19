@@ -1,0 +1,26 @@
+[2.263s] Invoking command in '/home/yunusdanabas/as_robotics/microros_ws/src/imu_visualization': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/imu_visualization build --build-base /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build install --record /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/install.log --single-version-externally-managed install_data
+[2.962s] running egg_info
+[3.013s] writing ../../build/imu_visualization/imu_visualization.egg-info/PKG-INFO
+[3.013s] writing dependency_links to ../../build/imu_visualization/imu_visualization.egg-info/dependency_links.txt
+[3.014s] writing entry points to ../../build/imu_visualization/imu_visualization.egg-info/entry_points.txt
+[3.014s] writing requirements to ../../build/imu_visualization/imu_visualization.egg-info/requires.txt
+[3.015s] writing top-level names to ../../build/imu_visualization/imu_visualization.egg-info/top_level.txt
+[3.124s] reading manifest file '../../build/imu_visualization/imu_visualization.egg-info/SOURCES.txt'
+[3.125s] writing manifest file '../../build/imu_visualization/imu_visualization.egg-info/SOURCES.txt'
+[3.126s] running build
+[3.126s] running build_py
+[3.126s] running install
+[3.139s] running install_lib
+[3.200s] running install_data
+[3.201s] running install_egg_info
+[3.256s] removing '/home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization-0.0.0-py3.12.egg-info' (and everything under it)
+[3.257s] Copying ../../build/imu_visualization/imu_visualization.egg-info to /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization-0.0.0-py3.12.egg-info
+[3.259s] running install_scripts
+[3.664s] Installing dual_imu_tf_broadcaster script to /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/imu_visualization
+[3.665s] Installing imu_fusion_node script to /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/imu_visualization
+[3.665s] Installing imu_tf_broadcaster script to /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/imu_visualization
+[3.665s] Installing imu_to_euler script to /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/imu_visualization
+[3.666s] Installing odometry_telemetry script to /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/imu_visualization
+[3.666s] Installing odometry_tf_broadcaster script to /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/imu_visualization
+[3.667s] writing list of installed files to '/home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/install.log'
+[3.750s] Invoked command in '/home/yunusdanabas/as_robotics/microros_ws/src/imu_visualization' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/imu_visualization build --build-base /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build install --record /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/install.log --single-version-externally-managed install_data

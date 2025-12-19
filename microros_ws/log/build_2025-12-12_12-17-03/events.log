@@ -1,0 +1,107 @@
+[0.000000] (-) TimerEvent: {}
+[0.000124] (-) JobUnselected: {'identifier': 'drive_base_msgs'}
+[0.000187] (-) JobUnselected: {'identifier': 'micro_ros_agent'}
+[0.000223] (-) JobUnselected: {'identifier': 'micro_ros_msgs'}
+[0.000260] (-) JobUnselected: {'identifier': 'micro_ros_setup'}
+[0.000301] (imu_visualization) JobQueued: {'identifier': 'imu_visualization', 'dependencies': OrderedDict()}
+[0.001336] (imu_visualization) JobStarted: {'identifier': 'imu_visualization'}
+[0.099641] (-) TimerEvent: {}
+[0.199920] (-) TimerEvent: {}
+[0.300164] (-) TimerEvent: {}
+[0.400433] (-) TimerEvent: {}
+[0.500723] (-) TimerEvent: {}
+[0.601148] (-) TimerEvent: {}
+[0.701753] (-) TimerEvent: {}
+[0.802109] (-) TimerEvent: {}
+[0.902388] (-) TimerEvent: {}
+[1.002680] (-) TimerEvent: {}
+[1.103013] (-) TimerEvent: {}
+[1.203425] (-) TimerEvent: {}
+[1.303651] (-) TimerEvent: {}
+[1.403924] (-) TimerEvent: {}
+[1.504904] (-) TimerEvent: {}
+[1.610075] (-) TimerEvent: {}
+[1.710382] (-) TimerEvent: {}
+[1.810612] (-) TimerEvent: {}
+[1.910841] (-) TimerEvent: {}
+[2.011094] (-) TimerEvent: {}
+[2.111325] (-) TimerEvent: {}
+[2.211542] (-) TimerEvent: {}
+[2.268303] (imu_visualization) Command: {'cmd': ['/home/yunusdanabas/mambaforge/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/imu_visualization', 'build', '--build-base', '/home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build', 'install', '--record', '/home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/yunusdanabas/as_robotics/microros_ws/src/imu_visualization', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/yunusdanabas', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'CONDA_PROMPT_MODIFIER': '(base)', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'yunusdanabas', 'LC_TIME': 'tr_TR.UTF-8', 'VSCODE_NLS_CONFIG': '{"userLocale":"en-us","osLocale":"en-us","resolvedLanguage":"en","defaultMessagesFile":"/usr/share/cursor/resources/app/out/nls.messages.json","locale":"en-us","availableLanguages":{}}', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'CI': '1', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/yunusdanabas', 'CHROME_DESKTOP': 'cursor.desktop', 'CONDA_SHLVL': '1', 'OLDPWD': '/home/yunusdanabas/as_robotics/microros_ws', 'DESKTOP_SESSION': 'ubuntu', 'NVM_BIN': '/home/yunusdanabas/.nvm/versions/node/v22.17.1/bin', 'NVM_INC': '/home/yunusdanabas/.nvm/versions/node/v22.17.1/include/node', 'VSCODE_IPC_HOOK': '/run/user/1000/vscode-baea8b7b-2.2.-main.sock', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/cursor.desktop', 'APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL': '1', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'tr_TR.UTF-8', 'MANAGERPID': '2589', 'SYSTEMD_EXEC_PID': '2885', 'IM_CONFIG_CHECK_ENV': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'NO_COLOR': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '6857', 'NVM_DIR': '/home/yunusdanabas/.nvm', 'VSCODE_CRASH_REPORTER_PROCESS_TYPE': 'extensionHost', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'VSCODE_L10N_BUNDLE_LOCATION': '', 'COLCON_PREFIX_PATH': '/home/yunusdanabas/ros_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'yunusdanabas', 'FORCE_COLOR': '0', 'JOURNAL_STREAM': '8:18329', '_': '/home/yunusdanabas/mambaforge/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'APPLICATIONINSIGHTS_CONFIGURATION_CONTENT': '{}', 'USERNAME': 'yunusdanabas', 'TERM': 'dumb', 'EVERYSPHERE_RIPGREP_PATH': '/usr/share/cursor/resources/app/node_modules/@vscode/ripgrep/bin/rg', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/home/yunusdanabas/.local/bin:/home/yunusdanabas/.gem/bin:/home/yunusdanabas/mamba/bin:/home/yunusdanabas/.local/bin:/home/yunusdanabas/.nvm/versions/node/v22.17.1/bin:/home/yunusdanabas/.gem/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/yunusdanabas/mambaforge/bin:/home/yunusdanabas/mambaforge/condabin:/home/yunusdanabas/mamba/bin:/home/yunusdanabas/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/yunusdanabas:@/tmp/.ICE-unix/2851,unix/yunusdanabas:/tmp/.ICE-unix/2851', 'INVOCATION_ID': 'c14077c11ab94b439f1f35f938d9fb16', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'tr_TR.UTF-8', 'VSCODE_PROCESS_TITLE': 'extension-host  [1-1]', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'MAMBA_ROOT_PREFIX': '/home/yunusdanabas/mambaforge', 'CURSOR_AGENT': '1', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'Unity', 'LC_TELEPHONE': 'tr_TR.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.CUMDH3', 'LS_COLORS': '', 'SBX_CHROME_API_RQ': '1', 'CURSOR_TRACE_ID': 'e4e334a52e3f4327aeb4fdb88e29d46c', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'XML_CATALOG_FILES': 'file:///home/yunusdanabas/mambaforge/etc/xml/catalog file:///etc/xml/catalog', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/yunusdanabas/mambaforge/bin/python', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'SHELL': '/bin/bash', 'LC_NAME': 'tr_TR.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'GEM_HOME': '/home/yunusdanabas/.gem', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CONDA_DEFAULT_ENV': 'base', 'LC_MEASUREMENT': 'tr_TR.UTF-8', 'GJS_DEBUG_OUTPUT': 'stderr', 'MAMBA_EXE': '/home/yunusdanabas/mambaforge/bin/mamba', 'LC_IDENTIFICATION': 'tr_TR.UTF-8', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/yunusdanabas/mambaforge/bin/conda', 'VSCODE_CODE_CACHE_PATH': '/home/yunusdanabas/.config/Cursor/CachedData/1685afce45886aa5579025ac7e077fc3d4369c50', 'NVM_CD_FLAGS': '', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/prefix_override:/home/yunusdanabas/mambaforge/lib/python3.12/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'LC_NUMERIC': 'tr_TR.UTF-8', 'CONDA_PREFIX': '/home/yunusdanabas/mambaforge', 'LC_PAPER': 'tr_TR.UTF-8', 'COLCON': '1', '_ZO_DOCTOR': '0', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'VSCODE_PID': '6857'}, 'shell': False}
+[2.311690] (-) TimerEvent: {}
+[2.411917] (-) TimerEvent: {}
+[2.512155] (-) TimerEvent: {}
+[2.612390] (-) TimerEvent: {}
+[2.712607] (-) TimerEvent: {}
+[2.812856] (-) TimerEvent: {}
+[2.913053] (-) TimerEvent: {}
+[3.013250] (-) TimerEvent: {}
+[3.100029] (imu_visualization) StdoutLine: {'line': b'running egg_info\n'}
+[3.113373] (-) TimerEvent: {}
+[3.162110] (imu_visualization) StdoutLine: {'line': b'creating ../../build/imu_visualization/imu_visualization.egg-info\n'}
+[3.162532] (imu_visualization) StdoutLine: {'line': b'writing ../../build/imu_visualization/imu_visualization.egg-info/PKG-INFO\n'}
+[3.163520] (imu_visualization) StdoutLine: {'line': b'writing dependency_links to ../../build/imu_visualization/imu_visualization.egg-info/dependency_links.txt\n'}
+[3.164076] (imu_visualization) StdoutLine: {'line': b'writing entry points to ../../build/imu_visualization/imu_visualization.egg-info/entry_points.txt\n'}
+[3.165260] (imu_visualization) StdoutLine: {'line': b'writing requirements to ../../build/imu_visualization/imu_visualization.egg-info/requires.txt\n'}
+[3.165663] (imu_visualization) StdoutLine: {'line': b'writing top-level names to ../../build/imu_visualization/imu_visualization.egg-info/top_level.txt\n'}
+[3.165956] (imu_visualization) StdoutLine: {'line': b"writing manifest file '../../build/imu_visualization/imu_visualization.egg-info/SOURCES.txt'\n"}
+[3.213555] (-) TimerEvent: {}
+[3.313811] (-) TimerEvent: {}
+[3.316260] (imu_visualization) StdoutLine: {'line': b"reading manifest file '../../build/imu_visualization/imu_visualization.egg-info/SOURCES.txt'\n"}
+[3.318917] (imu_visualization) StdoutLine: {'line': b"writing manifest file '../../build/imu_visualization/imu_visualization.egg-info/SOURCES.txt'\n"}
+[3.319314] (imu_visualization) StdoutLine: {'line': b'running build\n'}
+[3.319506] (imu_visualization) StdoutLine: {'line': b'running build_py\n'}
+[3.319813] (imu_visualization) StdoutLine: {'line': b'creating /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization\n'}
+[3.320151] (imu_visualization) StdoutLine: {'line': b'copying imu_visualization/odometry_telemetry.py -> /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization\n'}
+[3.320540] (imu_visualization) StdoutLine: {'line': b'copying imu_visualization/imu_fusion_node.py -> /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization\n'}
+[3.320927] (imu_visualization) StdoutLine: {'line': b'copying imu_visualization/imu_tf_broadcaster.py -> /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization\n'}
+[3.321302] (imu_visualization) StdoutLine: {'line': b'copying imu_visualization/__init__.py -> /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization\n'}
+[3.321581] (imu_visualization) StdoutLine: {'line': b'copying imu_visualization/imu_to_euler.py -> /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization\n'}
+[3.321911] (imu_visualization) StdoutLine: {'line': b'copying imu_visualization/dual_imu_tf_broadcaster.py -> /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization\n'}
+[3.322279] (imu_visualization) StdoutLine: {'line': b'copying imu_visualization/odometry_tf_broadcaster.py -> /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization\n'}
+[3.323017] (imu_visualization) StdoutLine: {'line': b'running install\n'}
+[3.337480] (imu_visualization) StdoutLine: {'line': b'running install_lib\n'}
+[3.412721] (imu_visualization) StdoutLine: {'line': b'creating /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization\n'}
+[3.413462] (imu_visualization) StdoutLine: {'line': b'copying /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization/odometry_telemetry.py -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization\n'}
+[3.413672] (imu_visualization) StdoutLine: {'line': b'copying /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization/imu_fusion_node.py -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization\n'}
+[3.413850] (-) TimerEvent: {}
+[3.413890] (imu_visualization) StdoutLine: {'line': b'copying /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization/imu_tf_broadcaster.py -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization\n'}
+[3.414303] (imu_visualization) StdoutLine: {'line': b'copying /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization/__init__.py -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization\n'}
+[3.414474] (imu_visualization) StdoutLine: {'line': b'copying /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization/imu_to_euler.py -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization\n'}
+[3.414610] (imu_visualization) StdoutLine: {'line': b'copying /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization/dual_imu_tf_broadcaster.py -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization\n'}
+[3.414740] (imu_visualization) StdoutLine: {'line': b'copying /home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/build/lib/imu_visualization/odometry_tf_broadcaster.py -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization\n'}
+[3.415264] (imu_visualization) StdoutLine: {'line': b'byte-compiling /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization/odometry_telemetry.py to odometry_telemetry.cpython-312.pyc\n'}
+[3.418681] (imu_visualization) StdoutLine: {'line': b'byte-compiling /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization/imu_fusion_node.py to imu_fusion_node.cpython-312.pyc\n'}
+[3.423676] (imu_visualization) StdoutLine: {'line': b'byte-compiling /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization/imu_tf_broadcaster.py to imu_tf_broadcaster.cpython-312.pyc\n'}
+[3.425813] (imu_visualization) StdoutLine: {'line': b'byte-compiling /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization/__init__.py to __init__.cpython-312.pyc\n'}
+[3.426269] (imu_visualization) StdoutLine: {'line': b'byte-compiling /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization/imu_to_euler.py to imu_to_euler.cpython-312.pyc\n'}
+[3.428167] (imu_visualization) StdoutLine: {'line': b'byte-compiling /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization/dual_imu_tf_broadcaster.py to dual_imu_tf_broadcaster.cpython-312.pyc\n'}
+[3.430553] (imu_visualization) StdoutLine: {'line': b'byte-compiling /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization/odometry_tf_broadcaster.py to odometry_tf_broadcaster.cpython-312.pyc\n'}
+[3.432313] (imu_visualization) StdoutLine: {'line': b'running install_data\n'}
+[3.432734] (imu_visualization) StdoutLine: {'line': b'creating /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/share/ament_index/resource_index/packages\n'}
+[3.433078] (imu_visualization) StdoutLine: {'line': b'copying resource/imu_visualization -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/share/ament_index/resource_index/packages\n'}
+[3.433401] (imu_visualization) StdoutLine: {'line': b'copying package.xml -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/share/imu_visualization\n'}
+[3.433716] (imu_visualization) StdoutLine: {'line': b'creating /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/share/imu_visualization/launch\n'}
+[3.434099] (imu_visualization) StdoutLine: {'line': b'copying launch/imu_visualization.launch.py -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/share/imu_visualization/launch\n'}
+[3.434287] (imu_visualization) StdoutLine: {'line': b'copying launch/dual_imu.launch.py -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/share/imu_visualization/launch\n'}
+[3.434593] (imu_visualization) StdoutLine: {'line': b'creating /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/share/imu_visualization/rviz\n'}
+[3.434785] (imu_visualization) StdoutLine: {'line': b'copying rviz/imu_view.rviz -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/share/imu_visualization/rviz\n'}
+[3.435295] (imu_visualization) StdoutLine: {'line': b'copying rviz/imu_view_position.rviz -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/share/imu_visualization/rviz\n'}
+[3.435591] (imu_visualization) StdoutLine: {'line': b'copying rviz/dual_imu_view.rviz -> /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/share/imu_visualization/rviz\n'}
+[3.435756] (imu_visualization) StdoutLine: {'line': b'running install_egg_info\n'}
+[3.499509] (imu_visualization) StdoutLine: {'line': b'Copying ../../build/imu_visualization/imu_visualization.egg-info to /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/python3.12/site-packages/imu_visualization-0.0.0-py3.12.egg-info\n'}
+[3.501010] (imu_visualization) StdoutLine: {'line': b'running install_scripts\n'}
+[3.513976] (-) TimerEvent: {}
+[3.614205] (-) TimerEvent: {}
+[3.714440] (-) TimerEvent: {}
+[3.811747] (imu_visualization) StdoutLine: {'line': b'Installing dual_imu_tf_broadcaster script to /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/imu_visualization\n'}
+[3.812399] (imu_visualization) StdoutLine: {'line': b'Installing imu_fusion_node script to /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/imu_visualization\n'}
+[3.812800] (imu_visualization) StdoutLine: {'line': b'Installing imu_tf_broadcaster script to /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/imu_visualization\n'}
+[3.813220] (imu_visualization) StdoutLine: {'line': b'Installing imu_to_euler script to /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/imu_visualization\n'}
+[3.813457] (imu_visualization) StdoutLine: {'line': b'Installing odometry_telemetry script to /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/imu_visualization\n'}
+[3.813675] (imu_visualization) StdoutLine: {'line': b'Installing odometry_tf_broadcaster script to /home/yunusdanabas/as_robotics/microros_ws/install/imu_visualization/lib/imu_visualization\n'}
+[3.814011] (imu_visualization) StdoutLine: {'line': b"writing list of installed files to '/home/yunusdanabas/as_robotics/microros_ws/build/imu_visualization/install.log'\n"}
+[3.814520] (-) TimerEvent: {}
+[3.887586] (imu_visualization) CommandEnded: {'returncode': 0}
+[3.910111] (imu_visualization) JobEnded: {'identifier': 'imu_visualization', 'rc': 0}
+[3.911400] (-) EventReactorShutdown: {}

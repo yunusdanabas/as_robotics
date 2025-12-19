@@ -1,0 +1,598 @@
+[0.014s] Invoking command in '/home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent': AMENT_PREFIX_PATH=/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_msgs:/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_setup:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/yunusdanabas/as_robotics/microros_ws/src/uros/micro-ROS-Agent/micro_ros_agent -DUAGENT_BUILD_EXECUTABLE=OFF -DUAGENT_P2P_PROFILE=OFF --no-warn-unused-cli -DCMAKE_INSTALL_PREFIX=/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent
+[0.102s] Not searching for unused variables given on the command line.
+[0.102s] -- The C compiler identification is GNU 13.3.0
+[0.120s] -- Detecting C compiler ABI info
+[0.236s] -- Detecting C compiler ABI info - done
+[0.249s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.249s] -- Detecting C compile features
+[0.250s] -- Detecting C compile features - done
+[0.319s] -- The CXX compiler identification is GNU 13.3.0
+[0.334s] -- Detecting CXX compiler ABI info
+[0.456s] -- Detecting CXX compiler ABI info - done
+[0.468s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.468s] -- Detecting CXX compile features
+[0.469s] -- Detecting CXX compile features - done
+[0.519s] -- Configuring done (0.5s)
+[0.524s] -- Generating done (0.0s)
+[0.527s] -- Build files have been written to: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent
+[0.531s] Invoked command in '/home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent' returned '0': AMENT_PREFIX_PATH=/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_msgs:/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_setup:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/yunusdanabas/as_robotics/microros_ws/src/uros/micro-ROS-Agent/micro_ros_agent -DUAGENT_BUILD_EXECUTABLE=OFF -DUAGENT_P2P_PROFILE=OFF --no-warn-unused-cli -DCMAKE_INSTALL_PREFIX=/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent
+[0.532s] Invoking command in '/home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent': AMENT_PREFIX_PATH=/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_msgs:/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_setup:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent -- -j8 -l8
+[0.589s] [  6%] Creating directories for 'xrceagent'
+[0.620s] [ 12%] Performing download step (git clone) for 'xrceagent'
+[0.645s] Cloning into 'xrceagent'...
+[2.958s] HEAD is now at 7362281 Release v2.4.3
+[3.017s] [ 18%] Performing update step for 'xrceagent'
+[3.050s] [ 25%] No patch step for 'xrceagent'
+[3.083s] [ 31%] Performing configure step for 'xrceagent'
+[3.095s] loading initial cache file /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/tmp/xrceagent-cache-.cmake
+[3.164s] -- The C compiler identification is GNU 13.3.0
+[3.179s] -- Detecting C compiler ABI info
+[3.291s] -- Detecting C compiler ABI info - done
+[3.304s] -- Check for working C compiler: /usr/bin/cc - skipped
+[3.304s] -- Detecting C compile features
+[3.305s] -- Detecting C compile features - done
+[3.367s] -- The CXX compiler identification is GNU 13.3.0
+[3.382s] -- Detecting CXX compiler ABI info
+[3.501s] -- Detecting CXX compiler ABI info - done
+[3.514s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[3.514s] -- Detecting CXX compile features
+[3.515s] -- Detecting CXX compile features - done
+[3.566s] -- Configuring done (0.5s)
+[3.570s] -- Generating done (0.0s)
+[3.571s] -- Build files have been written to: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build
+[3.596s] [ 37%] Performing build step for 'xrceagent'
+[3.650s] [  6%] Creating directories for 'spdlog'
+[3.681s] [ 12%] Performing download step (git clone) for 'spdlog'
+[3.704s] Cloning into 'spdlog'...
+[9.654s] HEAD is now at eb322062 Bump version to 1.9.2
+[9.731s] [ 18%] Performing update step for 'spdlog'
+[9.768s] [ 25%] No patch step for 'spdlog'
+[9.806s] [ 31%] Performing configure step for 'spdlog'
+[9.819s] loading initial cache file /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/spdlog/tmp/spdlog-cache-.cmake
+[9.908s] -- The CXX compiler identification is GNU 13.3.0
+[9.932s] -- Detecting CXX compiler ABI info
+[10.111s] -- Detecting CXX compiler ABI info - done
+[10.137s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[10.137s] -- Detecting CXX compile features
+[10.138s] -- Detecting CXX compile features - done
+[10.140s] -- Build spdlog: 1.9.2
+[10.146s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[10.332s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[10.334s] -- Found Threads: TRUE  
+[10.334s] -- Build type: Release
+[10.336s] -- Generating example(s)
+[10.337s] -- Generating install
+[10.364s] -- Configuring done (0.5s)
+[10.381s] -- Generating done (0.0s)
+[10.383s] -- Build files have been written to: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/spdlog/src/spdlog-build
+[10.418s] [ 37%] Performing build step for 'spdlog'
+[10.488s] [ 40%] Building CXX object CMakeFiles/spdlog.dir/src/color_sinks.cpp.o
+[10.488s] [ 40%] Building CXX object CMakeFiles/spdlog.dir/src/file_sinks.cpp.o
+[10.488s] [ 40%] Building CXX object CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o
+[10.488s] [ 40%] Building CXX object CMakeFiles/spdlog.dir/src/cfg.cpp.o
+[10.488s] [ 50%] Building CXX object CMakeFiles/spdlog.dir/src/spdlog.cpp.o
+[10.489s] [ 70%] Building CXX object CMakeFiles/spdlog.dir/src/async.cpp.o
+[10.489s] [ 70%] Building CXX object CMakeFiles/spdlog.dir/src/fmt.cpp.o
+[23.690s] [ 80%] Linking CXX static library libspdlog.a
+[23.804s] [ 80%] Built target spdlog
+[23.839s] [ 90%] Building CXX object example/CMakeFiles/example.dir/example.cpp.o
+[31.980s] [100%] Linking CXX executable example
+[32.140s] [100%] Built target example
+[32.182s] [ 43%] Performing install step for 'spdlog'
+[32.260s] [ 80%] Built target spdlog
+[32.295s] [100%] Built target example
+[32.323s] Install the project...
+[32.341s] -- Install configuration: "Release"
+[32.341s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include
+[32.342s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog
+[32.342s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/common-inl.h
+[32.343s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/spdlog.h
+[32.343s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fmt
+[32.343s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fmt/xchar.h
+[32.343s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fmt/ostr.h
+[32.344s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fmt/fmt.h
+[32.344s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fmt/bin_to_hex.h
+[32.344s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fmt/compile.h
+[32.345s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fmt/chrono.h
+[32.345s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/logger-inl.h
+[32.345s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/pattern_formatter-inl.h
+[32.346s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/common.h
+[32.346s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/async.h
+[32.346s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fwd.h
+[32.346s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/pattern_formatter.h
+[32.347s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/version.h
+[32.347s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/async_logger.h
+[32.347s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/formatter.h
+[32.347s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/logger.h
+[32.347s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/cfg
+[32.348s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/cfg/env.h
+[32.348s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/cfg/argv.h
+[32.348s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/cfg/helpers-inl.h
+[32.348s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/cfg/helpers.h
+[32.348s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks
+[32.348s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/mongo_sink.h
+[32.348s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/ringbuffer_sink.h
+[32.348s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/tcp_sink.h
+[32.349s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/dist_sink.h
+[32.349s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/dup_filter_sink.h
+[32.349s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/android_sink.h
+[32.349s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/wincolor_sink.h
+[32.350s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/sink.h
+[32.350s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/syslog_sink.h
+[32.350s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/systemd_sink.h
+[32.350s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/stdout_color_sinks.h
+[32.351s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/stdout_sinks.h
+[32.351s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/basic_file_sink.h
+[32.351s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/base_sink-inl.h
+[32.351s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/base_sink.h
+[32.351s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/basic_file_sink-inl.h
+[32.352s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/daily_file_sink.h
+[32.352s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/qt_sinks.h
+[32.352s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/sink-inl.h
+[32.352s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/rotating_file_sink-inl.h
+[32.353s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/wincolor_sink-inl.h
+[32.353s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/hourly_file_sink.h
+[32.353s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/ansicolor_sink-inl.h
+[32.353s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/msvc_sink.h
+[32.353s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/win_eventlog_sink.h
+[32.353s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/stdout_color_sinks-inl.h
+[32.354s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/rotating_file_sink.h
+[32.354s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/ostream_sink.h
+[32.354s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/stdout_sinks-inl.h
+[32.354s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/ansicolor_sink.h
+[32.354s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/sinks/null_sink.h
+[32.354s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details
+[32.354s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/log_msg.h
+[32.354s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/backtracer.h
+[32.354s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/log_msg-inl.h
+[32.354s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/thread_pool.h
+[32.354s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/tcp_client.h
+[32.355s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/log_msg_buffer-inl.h
+[32.355s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/periodic_worker.h
+[32.355s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/fmt_helper.h
+[32.355s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/file_helper-inl.h
+[32.355s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/synchronous_factory.h
+[32.355s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/os.h
+[32.356s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/periodic_worker-inl.h
+[32.356s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/circular_q.h
+[32.356s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/os-inl.h
+[32.356s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/thread_pool-inl.h
+[32.357s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/log_msg_buffer.h
+[32.357s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/file_helper.h
+[32.357s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/registry.h
+[32.358s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/mpmc_blocking_q.h
+[32.358s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/backtracer-inl.h
+[32.358s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/console_globals.h
+[32.358s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/windows_include.h
+[32.358s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/null_mutex.h
+[32.358s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/registry-inl.h
+[32.359s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/details/tcp_client-windows.h
+[32.359s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/async_logger-inl.h
+[32.359s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/stopwatch.h
+[32.359s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/spdlog-inl.h
+[32.359s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/tweakme.h
+[32.359s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/lib/libspdlog.a
+[32.359s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fmt/bundled/
+[32.359s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fmt/bundled//ranges.h
+[32.360s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fmt/bundled//format.h
+[32.360s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fmt/bundled//xchar.h
+[32.360s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fmt/bundled//locale.h
+[32.360s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fmt/bundled//args.h
+[32.360s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fmt/bundled//format-inl.h
+[32.360s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fmt/bundled//core.h
+[32.360s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fmt/bundled//os.h
+[32.361s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fmt/bundled//compile.h
+[32.361s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fmt/bundled//chrono.h
+[32.361s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fmt/bundled//color.h
+[32.361s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fmt/bundled//ostream.h
+[32.361s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/include/spdlog/fmt/bundled//printf.h
+[32.361s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/lib/pkgconfig/spdlog.pc
+[32.361s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/lib/cmake/spdlog/spdlogConfigTargets.cmake
+[32.362s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/lib/cmake/spdlog/spdlogConfigTargets-release.cmake
+[32.362s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/lib/cmake/spdlog/spdlogConfig.cmake
+[32.362s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/temp_install/spdlog-1.9.2/lib/cmake/spdlog/spdlogConfigVersion.cmake
+[32.397s] [ 50%] Completed 'spdlog'
+[32.460s] [ 50%] Built target spdlog
+[32.500s] [ 56%] Creating directories for 'uagent'
+[32.547s] [ 62%] No download step for 'uagent'
+[32.591s] [ 68%] No update step for 'uagent'
+[32.633s] [ 75%] No patch step for 'uagent'
+[32.675s] [ 81%] Performing configure step for 'uagent'
+[32.691s] loading initial cache file /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build/uagent-prefix/tmp/uagent-cache-.cmake
+[32.700s] -- Setting build type to 'Release' as none was specified.
+[32.735s] -- Found TinyXML2: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+[32.912s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[32.919s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[33.159s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[33.162s] -- Found Threads: TRUE  
+[33.170s] -- Configuring done (0.5s)
+[33.200s] -- Generating done (0.0s)
+[33.200s] -- Build files have been written to: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/agent/src/xrceagent-build
+[33.237s] [ 87%] Performing build step for 'uagent'
+[33.336s] [  2%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/Agent.cpp.o
+[33.351s] [  4%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/AgentInstance.cpp.o
+[33.352s] [  7%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/topic/Topic.cpp.o
+[33.352s] [  9%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/Root.cpp.o
+[33.372s] [ 11%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/processor/Processor.cpp.o
+[33.372s] [ 14%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/participant/Participant.cpp.o
+[33.378s] [ 16%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/client/ProxyClient.cpp.o
+[33.378s] [ 19%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/publisher/Publisher.cpp.o
+[36.894s] [ 21%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/subscriber/Subscriber.cpp.o
+[36.983s] [ 23%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/datawriter/DataWriter.cpp.o
+[37.067s] [ 26%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/datareader/DataReader.cpp.o
+[40.494s] [ 28%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/requester/Requester.cpp.o
+[48.170s] [ 30%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/replier/Replier.cpp.o
+[48.428s] [ 33%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/object/XRCEObject.cpp.o
+[49.905s] [ 35%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/types/XRCETypes.cpp.o
+[50.258s] [ 38%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/types/MessageHeader.cpp.o
+[51.168s] [ 40%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/types/SubMessageHeader.cpp.o
+[51.713s] [ 42%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/message/InputMessage.cpp.o
+[52.098s] [ 45%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/message/OutputMessage.cpp.o
+[53.359s] [ 47%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/utils/ArgumentParser.cpp.o
+[62.585s] [ 50%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/tcp/TCPv4AgentLinux.cpp.o
+[63.201s] [ 52%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/udp/UDPv6AgentLinux.cpp.o
+[64.216s] [ 54%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/tcp/TCPv6AgentLinux.cpp.o
+[65.240s] [ 57%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/udp/UDPv4AgentLinux.cpp.o
+[66.261s] [ 59%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/custom/CustomAgent.cpp.o
+[74.795s] [ 61%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/serial/PseudoTerminalAgentLinux.cpp.o
+[78.437s] [ 64%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/can/CanAgentLinux.cpp.o
+[81.953s] [ 66%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/discovery/DiscoveryServerLinux.cpp.o
+[86.121s] [ 69%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/discovery/DiscoveryServer.cpp.o
+[86.822s] [ 71%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/types/TopicPubSubType.cpp.o
+[88.322s] [ 73%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/xmlobjects/xmlobjects.cpp.o
+[90.975s] [ 76%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/middleware/fast/FastEntities.cpp.o
+[97.267s] [ 80%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/serial/MultiTermiosAgentLinux.cpp.o
+[97.268s] [ 80%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/middleware/fast/FastMiddleware.cpp.o
+[98.279s] [ 85%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/middleware/fastdds/FastDDSEntities.cpp.o
+[98.279s] [ 85%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/serial/MultiSerialAgentLinux.cpp.o
+[99.297s] [ 90%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/serial/SerialAgentLinux.cpp.o
+[99.299s] [ 90%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/serial/TermiosAgentLinux.cpp.o
+[100.320s] [ 92%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/stream_framing/StreamFramingProtocol.cpp.o
+[100.330s] [ 95%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/Server.cpp.o
+[101.181s] [ 97%] Building CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/middleware/fastdds/FastDDSMiddleware.cpp.o
+[116.281s] [100%] Linking CXX shared library libmicroxrcedds_agent.so
+[116.623s] [100%] Built target microxrcedds_agent
+[116.649s] No install step for 'uagent'
+[116.676s] Completed 'uagent'
+[116.717s] Built target uagent
+[116.745s] [ 43%] Performing install step for 'xrceagent'
+[116.864s] [100%] Built target microxrcedds_agent
+[116.884s] Install the project...
+[116.893s] -- Install configuration: "Release"
+[116.893s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/lib/libmicroxrcedds_agent.so.2.4.3
+[116.895s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/lib/libmicroxrcedds_agent.so.2.4
+[116.896s] -- Set non-toolchain portion of runtime path of "/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/lib/libmicroxrcedds_agent.so.2.4.3" to ""
+[116.896s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/lib/libmicroxrcedds_agent.so
+[116.896s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent
+[116.896s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/logger
+[116.897s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/logger/Logger.hpp
+[116.897s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/Root.hpp
+[116.897s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/datawriter
+[116.897s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/datawriter/DataWriter.hpp
+[116.897s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/middleware
+[116.897s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/middleware/ced
+[116.898s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/middleware/ced/CedEntities.hpp
+[116.898s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/middleware/ced/CedMiddleware.hpp
+[116.898s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/middleware/fastdds
+[116.898s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/middleware/fastdds/FastDDSEntities.hpp
+[116.898s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/middleware/fastdds/FastDDSMiddleware.hpp
+[116.899s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/middleware/utils
+[116.899s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/middleware/utils/Callbacks.hpp
+[116.899s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/middleware/fast
+[116.899s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/middleware/fast/FastEntities.hpp
+[116.900s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/middleware/fast/FastMiddleware.hpp
+[116.900s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/middleware/Middleware.hpp
+[116.900s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport
+[116.900s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/discovery
+[116.901s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/discovery/DiscoveryServer.hpp
+[116.901s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/discovery/DiscoveryServerWindows.hpp
+[116.901s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/discovery/DiscoveryServerLinux.hpp
+[116.901s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/Server.hpp
+[116.901s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/TransportRc.hpp
+[116.901s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/custom
+[116.902s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/custom/CustomAgent.hpp
+[116.902s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/udp
+[116.902s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/udp/UDPv4AgentWindows.hpp
+[116.902s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/udp/UDPv6AgentWindows.hpp
+[116.902s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/udp/UDPv4AgentLinux.hpp
+[116.903s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/udp/UDPv6AgentLinux.hpp
+[116.903s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/stream_framing
+[116.903s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/stream_framing/StreamFramingProtocol.hpp
+[116.903s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/util
+[116.903s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/util/InterfaceLinux.hpp
+[116.904s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/util/InterfaceWindows.hpp
+[116.904s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/can
+[116.904s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/can/CanAgentLinux.hpp
+[116.904s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/tcp
+[116.904s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/tcp/TCPv4AgentLinux.hpp
+[116.905s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/tcp/TCPv6AgentLinux.hpp
+[116.905s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/tcp/TCPServerBase.hpp
+[116.905s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/tcp/TCPv6AgentWindows.hpp
+[116.905s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/tcp/TCPConnection.hpp
+[116.905s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/tcp/TCPv4AgentWindows.hpp
+[116.906s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/p2p
+[116.906s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/p2p/AgentDiscovererLinux.hpp
+[116.906s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/p2p/AgentDiscoverer.hpp
+[116.906s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/endpoint
+[116.906s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/endpoint/CustomEndPoint.hpp
+[116.907s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/endpoint/CanEndPoint.hpp
+[116.907s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/endpoint/IPv6EndPoint.hpp
+[116.907s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/endpoint/SerialEndPoint.hpp
+[116.907s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/endpoint/MultiSerialEndPoint.hpp
+[116.907s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/endpoint/IPv4EndPoint.hpp
+[116.908s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/serial
+[116.908s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/serial/MultiSerialAgentLinux.hpp
+[116.908s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/serial/baud_rate_table_linux.h
+[116.908s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/serial/SerialAgentLinux.hpp
+[116.908s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/serial/TermiosAgentLinux.hpp
+[116.908s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/serial/MultiTermiosAgentLinux.hpp
+[116.909s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/serial/PseudoTerminalAgentLinux.hpp
+[116.909s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/SessionManager.hpp
+[116.909s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/topic
+[116.909s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/topic/Topic.hpp
+[116.909s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/AgentInstance.hpp
+[116.910s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/utils
+[116.910s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/utils/Time.hpp
+[116.910s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/utils/Color.hpp
+[116.910s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/utils/Conversion.hpp
+[116.910s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/utils/TokenBucket.hpp
+[116.911s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/utils/SharedMutex.hpp
+[116.911s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/utils/SharedMutexPriority.hpp
+[116.911s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/utils/Functions.hpp
+[116.911s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/utils/SeqNum.hpp
+[116.911s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/utils/ArgumentParser.hpp
+[116.911s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/Agent.hpp
+[116.912s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/scheduler
+[116.912s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/scheduler/PacketScheduler.hpp
+[116.912s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/scheduler/Scheduler.hpp
+[116.912s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/requester
+[116.912s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/requester/Requester.hpp
+[116.913s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/visibility.hpp
+[116.913s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/object
+[116.913s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/object/XRCEObject.hpp
+[116.913s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/participant
+[116.913s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/participant/Participant.hpp
+[116.914s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/publisher
+[116.914s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/publisher/Publisher.hpp
+[116.914s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/types
+[116.914s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/types/TopicPubSubType.hpp
+[116.914s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/types/XRCETypes.hpp
+[116.915s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/types/Optional.hpp
+[116.915s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/types/MessageHeader.hpp
+[116.915s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/types/SubMessageHeader.hpp
+[116.915s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/subscriber
+[116.915s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/subscriber/Subscriber.hpp
+[116.916s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/reader
+[116.916s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/reader/Reader.hpp
+[116.916s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/p2p
+[116.917s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/p2p/InternalClientManager.hpp
+[116.917s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/p2p/InternalClient.hpp
+[116.917s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/client
+[116.917s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/client/session
+[116.918s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/client/session/stream
+[116.918s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/client/session/stream/InputStream.hpp
+[116.918s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/client/session/stream/OutputStream.hpp
+[116.918s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/client/session/SessionInfo.hpp
+[116.918s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/client/session/Session.hpp
+[116.919s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/client/ProxyClient.hpp
+[116.919s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/processor
+[116.920s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/processor/Processor.hpp
+[116.920s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/message
+[116.920s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/message/InputMessage.hpp
+[116.920s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/message/OutputMessage.hpp
+[116.920s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/message/Packet.hpp
+[116.921s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/replier
+[116.921s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/replier/Replier.hpp
+[116.921s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/datareader
+[116.921s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/datareader/DataReader.hpp
+[116.921s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/share/microxrcedds_agent/cmake/microxrcedds_agentTargets.cmake
+[116.922s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/share/microxrcedds_agent/cmake/microxrcedds_agentTargets-release.cmake
+[116.922s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/config.hpp
+[116.922s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/share/microxrcedds_agent/LICENSE
+[116.922s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/share/microxrcedds_agent/cmake/microxrcedds_agentConfig.cmake
+[116.922s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/share/microxrcedds_agent/cmake/microxrcedds_agentConfigVersion.cmake
+[116.923s] -- Up-to-date: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent
+[116.923s] -- Up-to-date: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include
+[116.923s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog
+[116.923s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/common-inl.h
+[116.923s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/spdlog.h
+[116.924s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fmt
+[116.924s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fmt/xchar.h
+[116.924s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fmt/bundled
+[116.924s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fmt/bundled/ranges.h
+[116.925s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fmt/bundled/format.h
+[116.925s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fmt/bundled/xchar.h
+[116.925s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fmt/bundled/locale.h
+[116.925s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fmt/bundled/args.h
+[116.925s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fmt/bundled/format-inl.h
+[116.926s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fmt/bundled/core.h
+[116.926s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fmt/bundled/os.h
+[116.926s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fmt/bundled/compile.h
+[116.926s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fmt/bundled/chrono.h
+[116.927s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fmt/bundled/color.h
+[116.927s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fmt/bundled/ostream.h
+[116.927s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fmt/bundled/printf.h
+[116.927s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fmt/ostr.h
+[116.928s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fmt/fmt.h
+[116.928s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fmt/bin_to_hex.h
+[116.928s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fmt/compile.h
+[116.928s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fmt/chrono.h
+[116.928s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/logger-inl.h
+[116.929s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/pattern_formatter-inl.h
+[116.929s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/common.h
+[116.929s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/async.h
+[116.929s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/fwd.h
+[116.930s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/pattern_formatter.h
+[116.930s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/version.h
+[116.930s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/async_logger.h
+[116.930s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/formatter.h
+[116.930s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/logger.h
+[116.930s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/cfg
+[116.931s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/cfg/env.h
+[116.931s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/cfg/argv.h
+[116.931s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/cfg/helpers-inl.h
+[116.931s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/cfg/helpers.h
+[116.931s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks
+[116.931s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/mongo_sink.h
+[116.931s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/ringbuffer_sink.h
+[116.932s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/tcp_sink.h
+[116.932s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/dist_sink.h
+[116.932s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/dup_filter_sink.h
+[116.932s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/android_sink.h
+[116.932s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/wincolor_sink.h
+[116.932s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/sink.h
+[116.933s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/syslog_sink.h
+[116.933s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/systemd_sink.h
+[116.933s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/stdout_color_sinks.h
+[116.933s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/stdout_sinks.h
+[116.933s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/basic_file_sink.h
+[116.933s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/base_sink-inl.h
+[116.933s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/base_sink.h
+[116.934s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/basic_file_sink-inl.h
+[116.934s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/daily_file_sink.h
+[116.934s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/qt_sinks.h
+[116.934s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/sink-inl.h
+[116.934s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/rotating_file_sink-inl.h
+[116.934s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/wincolor_sink-inl.h
+[116.934s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/hourly_file_sink.h
+[116.934s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/ansicolor_sink-inl.h
+[116.935s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/msvc_sink.h
+[116.935s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/win_eventlog_sink.h
+[116.935s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/stdout_color_sinks-inl.h
+[116.935s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/rotating_file_sink.h
+[116.935s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/ostream_sink.h
+[116.935s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/stdout_sinks-inl.h
+[116.935s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/ansicolor_sink.h
+[116.935s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/sinks/null_sink.h
+[116.935s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details
+[116.935s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/log_msg.h
+[116.935s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/backtracer.h
+[116.936s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/log_msg-inl.h
+[116.936s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/thread_pool.h
+[116.936s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/tcp_client.h
+[116.936s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/log_msg_buffer-inl.h
+[116.936s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/periodic_worker.h
+[116.936s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/fmt_helper.h
+[116.936s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/file_helper-inl.h
+[116.936s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/synchronous_factory.h
+[116.936s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/os.h
+[116.936s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/periodic_worker-inl.h
+[116.936s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/circular_q.h
+[116.936s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/os-inl.h
+[116.937s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/thread_pool-inl.h
+[116.937s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/log_msg_buffer.h
+[116.937s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/file_helper.h
+[116.937s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/registry.h
+[116.937s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/mpmc_blocking_q.h
+[116.937s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/backtracer-inl.h
+[116.937s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/console_globals.h
+[116.937s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/windows_include.h
+[116.937s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/null_mutex.h
+[116.937s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/registry-inl.h
+[116.937s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/details/tcp_client-windows.h
+[116.937s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/async_logger-inl.h
+[116.937s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/stopwatch.h
+[116.938s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/spdlog-inl.h
+[116.938s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/tweakme.h
+[116.938s] -- Up-to-date: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/lib
+[116.938s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/lib/cmake
+[116.938s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/lib/cmake/spdlog
+[116.938s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/lib/cmake/spdlog/spdlogConfigTargets.cmake
+[116.938s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/lib/cmake/spdlog/spdlogConfigTargets-release.cmake
+[116.938s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/lib/cmake/spdlog/spdlogConfig.cmake
+[116.938s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/lib/cmake/spdlog/spdlogConfigVersion.cmake
+[116.938s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/lib/libspdlog.a
+[116.938s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/lib/pkgconfig
+[116.938s] -- Installing: /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/lib/pkgconfig/spdlog.pc
+[116.957s] [ 50%] Completed 'xrceagent'
+[116.999s] [ 50%] Built target xrceagent
+[117.025s] [ 56%] Creating directories for 'micro_ros_agent'
+[117.053s] [ 62%] No download step for 'micro_ros_agent'
+[117.078s] [ 68%] No update step for 'micro_ros_agent'
+[117.108s] [ 75%] No patch step for 'micro_ros_agent'
+[117.134s] [ 81%] Performing configure step for 'micro_ros_agent'
+[117.144s] loading initial cache file /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent/micro_ros_agent-prefix/tmp/micro_ros_agent-cache-.cmake
+[117.160s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[117.303s] -- Found Python3: /home/yunusdanabas/mambaforge/bin/python3 (found version "3.12.11") found components: Interpreter 
+[117.562s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[117.570s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[117.680s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[117.681s] -- Found Threads: TRUE  
+[117.697s] -- Found rosidl_cmake: 4.6.6 (/opt/ros/jazzy/share/rosidl_cmake/cmake)
+[117.702s] -- Found rosidl_adapter: 4.6.6 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[117.718s] -- Found fastrtps_cmake_module: 3.6.2 (/opt/ros/jazzy/share/fastrtps_cmake_module/cmake)
+[117.723s] -- Found rmw_dds_common: 3.1.0 (/opt/ros/jazzy/share/rmw_dds_common/cmake)
+[117.788s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[117.814s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[117.829s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[117.864s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[117.909s] -- Found rmw_fastrtps_shared_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_shared_cpp/cmake)
+[117.962s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[117.968s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[117.974s] -- Found ament_cmake_gtest: 2.5.4 (/opt/ros/jazzy/share/ament_cmake_gtest/cmake)
+[117.976s] -- Found micro_ros_msgs: 5.0.2 (/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake)
+[118.121s] -- Configuring done (1.0s)
+[118.129s] CMake Warning at CMakeLists.txt:53 (add_executable):
+[118.129s]   Cannot generate a safe runtime search path for target micro_ros_agent
+[118.129s]   because files in some directories may conflict with libraries in implicit
+[118.129s]   directories:
+[118.129s] 
+[118.130s]     runtime library [libssl.so.3] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+[118.130s]       /home/yunusdanabas/mambaforge/lib
+[118.130s]     runtime library [libcrypto.so.3] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+[118.130s]       /home/yunusdanabas/mambaforge/lib
+[118.130s] 
+[118.130s]   Some of these libraries may not be found correctly.
+[118.130s] 
+[118.130s] 
+[118.131s] -- Generating done (0.0s)
+[118.136s] -- Build files have been written to: /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent
+[118.165s] [ 87%] Performing build step for 'micro_ros_agent'
+[118.233s] [ 16%] Building CXX object CMakeFiles/micro_ros_agent.dir/src/main.cpp.o
+[118.235s] [ 33%] Building CXX object CMakeFiles/micro_ros_agent.dir/src/agent/graph_manager/graph_typesupport.cpp.o
+[118.238s] [ 66%] Building CXX object CMakeFiles/micro_ros_agent.dir/src/agent/Agent.cpp.o
+[118.238s] [ 66%] Building CXX object CMakeFiles/micro_ros_agent.dir/src/agent/graph_manager/graph_manager.cpp.o
+[118.238s] [ 83%] Building CXX object CMakeFiles/micro_ros_agent.dir/src/agent/utils/demangle.cpp.o
+[120.229s] In file included from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/spdlog.h:12,
+[120.229s]                  from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/logger/Logger.hpp:23,
+[120.230s]                  from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/SessionManager.hpp:18,
+[120.230s]                  from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/Server.hpp:20,
+[120.230s]                  from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/utils/ArgumentParser.hpp:24,
+[120.230s]                  from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/AgentInstance.hpp:20,
+[120.231s]                  from /home/yunusdanabas/as_robotics/microros_ws/src/uros/micro-ROS-Agent/micro_ros_agent/include/agent/Agent.hpp:18,
+[120.231s]                  from /home/yunusdanabas/as_robotics/microros_ws/src/uros/micro-ROS-Agent/micro_ros_agent/src/agent/Agent.cpp:18:
+[120.231s] /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/common.h:127:111: error: ‘basic_runtime’ is not a member of ‘fmt’
+[120.231s]   127 |           std::is_convertible<T, fmt::basic_string_view<Char>>::value || std::is_same<remove_cvref_t<T>, fmt::basic_runtime<Char>>::value>
+[120.231s]       |                                                                                                               ^~~~~~~~~~~~~
+[120.232s] /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/common.h:127:125: error: template argument 2 is invalid
+[120.232s]   127 |           std::is_convertible<T, fmt::basic_string_view<Char>>::value || std::is_same<remove_cvref_t<T>, fmt::basic_runtime<Char>>::value>
+[120.232s]       |                                                                                                                             ^~~~
+[120.232s] /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/common.h:127:138: error: expected ‘{’ before ‘>’ token
+[120.232s]   127 |           std::is_convertible<T, fmt::basic_string_view<Char>>::value || std::is_same<remove_cvref_t<T>, fmt::basic_runtime<Char>>::value>
+[120.233s]       |                                                                                                                                          ^
+[120.375s] In file included from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/spdlog.h:12,
+[120.376s]                  from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/logger/Logger.hpp:23,
+[120.376s]                  from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/SessionManager.hpp:18,
+[120.376s]                  from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/transport/Server.hpp:20,
+[120.376s]                  from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/utils/ArgumentParser.hpp:24,
+[120.376s]                  from /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/uxr/agent/AgentInstance.hpp:20,
+[120.376s]                  from /home/yunusdanabas/as_robotics/microros_ws/src/uros/micro-ROS-Agent/micro_ros_agent/include/agent/Agent.hpp:18,
+[120.377s]                  from /home/yunusdanabas/as_robotics/microros_ws/src/uros/micro-ROS-Agent/micro_ros_agent/src/main.cpp:15:
+[120.377s] /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/common.h:127:111: error: ‘basic_runtime’ is not a member of ‘fmt’
+[120.377s]   127 |           std::is_convertible<T, fmt::basic_string_view<Char>>::value || std::is_same<remove_cvref_t<T>, fmt::basic_runtime<Char>>::value>
+[120.377s]       |                                                                                                               ^~~~~~~~~~~~~
+[120.377s] /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/common.h:127:125: error: template argument 2 is invalid
+[120.378s]   127 |           std::is_convertible<T, fmt::basic_string_view<Char>>::value || std::is_same<remove_cvref_t<T>, fmt::basic_runtime<Char>>::value>
+[120.378s]       |                                                                                                                             ^~~~
+[120.378s] /home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_agent/include/spdlog/common.h:127:138: error: expected ‘{’ before ‘>’ token
+[120.378s]   127 |           std::is_convertible<T, fmt::basic_string_view<Char>>::value || std::is_same<remove_cvref_t<T>, fmt::basic_runtime<Char>>::value>
+[120.379s]       |                                                                                                                                          ^
+[124.668s] gmake[5]: *** [CMakeFiles/micro_ros_agent.dir/build.make:90: CMakeFiles/micro_ros_agent.dir/src/agent/Agent.cpp.o] Error 1
+[124.669s] gmake[5]: *** Waiting for unfinished jobs....
+[124.724s] gmake[5]: *** [CMakeFiles/micro_ros_agent.dir/build.make:76: CMakeFiles/micro_ros_agent.dir/src/main.cpp.o] Error 1
+[125.070s] gmake[4]: *** [CMakeFiles/Makefile2:137: CMakeFiles/micro_ros_agent.dir/all] Error 2
+[125.070s] gmake[3]: *** [Makefile:146: all] Error 2
+[125.070s] gmake[2]: *** [CMakeFiles/micro_ros_agent.dir/build.make:86: micro_ros_agent-prefix/src/micro_ros_agent-stamp/micro_ros_agent-build] Error 2
+[125.070s] gmake[1]: *** [CMakeFiles/Makefile2:111: CMakeFiles/micro_ros_agent.dir/all] Error 2
+[125.070s] gmake: *** [Makefile:91: all] Error 2
+[125.072s] Invoked command in '/home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent' returned '2': AMENT_PREFIX_PATH=/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_msgs:/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_setup:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/yunusdanabas/as_robotics/microros_ws/install/micro_ros_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/yunusdanabas/as_robotics/microros_ws/build/micro_ros_agent -- -j8 -l8

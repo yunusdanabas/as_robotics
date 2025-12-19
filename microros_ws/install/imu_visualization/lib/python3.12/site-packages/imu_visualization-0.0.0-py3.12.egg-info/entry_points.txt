@@ -1,0 +1,8 @@
+[console_scripts]
+capture_imu_snap = imu_visualization.capture_imu_snap:main
+dual_imu_tf_broadcaster = imu_visualization.dual_imu_tf_broadcaster:main
+imu_fusion_node = imu_visualization.imu_fusion_node:main
+imu_tf_broadcaster = imu_visualization.imu_tf_broadcaster:main
+imu_to_euler = imu_visualization.imu_to_euler:main
+odometry_telemetry = imu_visualization.odometry_telemetry:main
+odometry_tf_broadcaster = imu_visualization.odometry_tf_broadcaster:main
