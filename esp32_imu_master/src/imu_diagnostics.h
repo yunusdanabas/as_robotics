@@ -17,6 +17,10 @@
 #include <Adafruit_BNO055.h>
 #include "sensor_fusion.h"
 
+// Provided by main translation unit to synchronize BNO055 access
+void lock_bno_i2c();
+void unlock_bno_i2c();
+
 #ifndef ENABLE_DIAGNOSTIC_LOGGING
 #define ENABLE_DIAGNOSTIC_LOGGING 0
 #endif
@@ -93,8 +97,10 @@ inline void get_bno055_calibration_status(Adafruit_BNO055& bno,
                                          uint8_t& sys, uint8_t& gyro, 
                                          uint8_t& accel, uint8_t& mag,
                                          uint8_t& mode) {
+    lock_bno_i2c();
     bno.getCalibration(&sys, &gyro, &accel, &mag);
     mode = bno.getMode();  // getMode() returns uint8_t, not adafruit_bno055_opmode_t
+    unlock_bno_i2c();
 }
 
 /**
@@ -259,4 +265,3 @@ inline void init_diagnostic_logging(uint32_t log_interval_ms = 20) {
 }
 
 #endif // IMU_DIAGNOSTICS_H
-

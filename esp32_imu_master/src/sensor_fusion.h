@@ -94,6 +94,33 @@ inline void alignHemisphere(Quaternion& q, const Quaternion& ref) {
 }
 
 /**
+ * Normalized Linear Interpolation (NLERP) between two quaternions
+ * Faster than SLERP, suitable for small angular differences
+ * 
+ * @param q1 First quaternion (t=0)
+ * @param q2 Second quaternion (t=1)
+ * @param t Interpolation factor [0.0, 1.0]
+ * @return Interpolated quaternion (normalized)
+ */
+inline Quaternion nlerp(const Quaternion& q1, const Quaternion& q2, float t) {
+    // Ensure shortest path
+    Quaternion q2_adj = q2;
+    if (q1.dot(q2) < 0.0f) {
+        q2_adj = -q2;
+    }
+    
+    // Linear interpolation
+    Quaternion result(
+        q1.w * (1.0f - t) + q2_adj.w * t,
+        q1.x * (1.0f - t) + q2_adj.x * t,
+        q1.y * (1.0f - t) + q2_adj.y * t,
+        q1.z * (1.0f - t) + q2_adj.z * t
+    );
+    result.normalize();
+    return result;
+}
+
+/**
  * Spherical Linear Interpolation (SLERP) between two quaternions
  * 
  * @param q1 First quaternion (t=0)
@@ -281,7 +308,24 @@ public:
     q0 = 1.0f; q1 = 0.0f; q2 = 0.0f; q3 = 0.0f;
   }
   
+  /**
+   * Update filter with IMU data (fixed dt from sampleFreq)
+   */
   void updateIMU(float gx, float gy, float gz, float ax, float ay, float az) {
+    updateIMU(gx, gy, gz, ax, ay, az, 1.0f / sampleFreq);
+  }
+  
+  /**
+   * Update filter with IMU data and variable time step
+   * @param gx, gy, gz Gyroscope in rad/s
+   * @param ax, ay, az Accelerometer in m/s^2
+   * @param dt Time step in seconds (clamped to safe bounds internally)
+   */
+  void updateIMU(float gx, float gy, float gz, float ax, float ay, float az, float dt) {
+    // Clamp dt to safe bounds
+    if (dt < 0.0001f) dt = 0.0001f;
+    if (dt > 0.05f) dt = 0.05f;
+    
     float recipNorm;
     float s0, s1, s2, s3;
     float qDot1, qDot2, qDot3, qDot4;
@@ -334,8 +378,7 @@ public:
       qDot4 -= beta * s3;
     }
 
-    // Integrate rate of change
-    float dt = 1.0f / sampleFreq;
+    // Integrate rate of change using variable dt
     q0 += qDot1 * dt;
     q1 += qDot2 * dt;
     q2 += qDot3 * dt;
@@ -411,8 +454,12 @@ struct QuaternionTracker {
         return 2.0f * acosf(dot);
     }
     
+    // Fast-path threshold: skip expensive math when nearly stationary
+    static constexpr float FAST_PATH_DOT_THRESHOLD = 0.9998f;
+    
     /**
      * Process incoming quaternion with sign continuity, warmup, and physics-based glitch detection
+     * Includes fast-path early exit for stationary/slow movement and uses NLERP for efficiency.
      * @param q Incoming quaternion (will be modified to output value)
      * @param gyro_rad_s Gyro reading in rad/s (optional, nullptr if not available)
      * @param dt Time step in seconds (default: 1/50 Hz = 0.02s)
@@ -429,28 +476,41 @@ struct QuaternionTracker {
             // Apply sign continuity to incoming quaternion
             apply_sign_continuity(q, last_output_quat);
             
+            // FAST-PATH: Skip expensive math when quaternion delta is negligible
+            float dot = fabsf(q.dot(last_output_quat));
+            if (dot > FAST_PATH_DOT_THRESHOLD && !smoothing_active) {
+                // Nearly identical orientation - just update and return
+                last_output_quat = q;
+                last_prediction_error = 0.0f;
+                if (warmup_count > 0) {
+                    warmup_count--;
+                    return false;
+                }
+                return true;
+            }
+            
             if (smoothing_active) {
                 // Glitch mode: use very slow smoothing or freeze
                 smoothing_samples++;
                 float t = (float)smoothing_samples / SMOOTHING_DURATION;
                 
                 if (t >= 1.0f || smoothing_samples >= SMOOTHING_DURATION) {
-                    // Smoothing complete - apply always-on smoothing to target
-                    Quaternion q_smoothed = slerp(last_output_quat, target_quat, ALWAYS_ON_SMOOTHING_ALPHA);
+                    // Smoothing complete - apply always-on smoothing to target (use NLERP for speed)
+                    Quaternion q_smoothed = nlerp(last_output_quat, target_quat, ALWAYS_ON_SMOOTHING_ALPHA);
                     q = q_smoothed;
                     smoothing_active = false;
                     smoothing_samples = 0;
                 } else {
-                    // Glitch mode: very slow smoothing towards locked target
-                    Quaternion q_interp = slerp(smoothing_start, target_quat, t);
+                    // Glitch mode: very slow smoothing towards locked target (use NLERP for speed)
+                    Quaternion q_interp = nlerp(smoothing_start, target_quat, t);
                     // Apply glitch-mode smoothing (very slow)
-                    q = slerp(last_output_quat, q_interp, GLITCH_MODE_SMOOTHING_ALPHA);
+                    q = nlerp(last_output_quat, q_interp, GLITCH_MODE_SMOOTHING_ALPHA);
                     q.normalize();
                 }
             } else {
-                // Normal mode: apply always-on light smoothing first
+                // Normal mode: apply always-on light smoothing first (use NLERP for speed)
                 Quaternion q_measured = q;
-                Quaternion q_smoothed = slerp(last_output_quat, q_measured, ALWAYS_ON_SMOOTHING_ALPHA);
+                Quaternion q_smoothed = nlerp(last_output_quat, q_measured, ALWAYS_ON_SMOOTHING_ALPHA);
                 
                 // Physics-based glitch detection using gyro prediction
                 bool glitch = false;

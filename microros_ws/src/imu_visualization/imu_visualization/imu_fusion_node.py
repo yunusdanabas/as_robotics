@@ -16,6 +16,7 @@ Author: IMU Tele-Imitation Project
 import math
 import rclpy
 from rclpy.node import Node
+from rclpy.qos import QoSProfile, QoSReliabilityPolicy, QoSHistoryPolicy
 from sensor_msgs.msg import Imu
 from geometry_msgs.msg import TransformStamped
 from tf2_ros import TransformBroadcaster
@@ -168,6 +169,9 @@ class ImuFusionNode(Node):
         self.declare_parameter('fused_offset_y', 0.0)
         self.declare_parameter('fused_offset_z', 0.0)
         
+        # Timestamp gating parameter (Task 12)
+        self.declare_parameter('timestamp_skew_threshold_ms', 20.0)  # 20ms skew window
+        
         # Get parameters
         self.base_frame = self.get_parameter('base_frame').value
         self.fused_frame = self.get_parameter('fused_frame').value
@@ -186,6 +190,9 @@ class ImuFusionNode(Node):
             self.get_parameter('fused_offset_z').value,
         )
         
+        # Timestamp skew threshold in seconds
+        self.timestamp_skew_threshold = self.get_parameter('timestamp_skew_threshold_ms').value / 1000.0
+        
         # Normalize weights
         total_weight = self.imu1_weight + self.imu2_weight
         if total_weight > 0:
@@ -194,6 +201,13 @@ class ImuFusionNode(Node):
         
         # Create TF broadcaster
         self.tf_broadcaster = TransformBroadcaster(self)
+        
+        # Best-Effort QoS profile to match ESP32 publisher (Task 6)
+        qos_best_effort = QoSProfile(
+            reliability=QoSReliabilityPolicy.BEST_EFFORT,
+            history=QoSHistoryPolicy.KEEP_LAST,
+            depth=10
+        )
         
         # Create publisher for fused IMU data
         self.fused_publisher = self.create_publisher(Imu, fused_topic, 10)
@@ -205,19 +219,19 @@ class ImuFusionNode(Node):
         # Quaternion tracker for fused output
         self.tracker_fused = QuaternionTracker()
         
-        # Subscribe to IMU data
+        # Subscribe to IMU data with Best-Effort QoS
         self.sub_imu1 = self.create_subscription(
             Imu,
             imu1_topic,
             self.imu1_callback,
-            10
+            qos_best_effort
         )
         
         self.sub_imu2 = self.create_subscription(
             Imu,
             imu2_topic,
             self.imu2_callback,
-            10
+            qos_best_effort
         )
         
         self.get_logger().info('IMU Fusion Node started')
@@ -228,6 +242,8 @@ class ImuFusionNode(Node):
             self.get_logger().info(f'  Weights: IMU1={self.imu1_weight:.2f}, IMU2={self.imu2_weight:.2f}')
         self.get_logger().info(f'  Publishing to: {fused_topic}')
         self.get_logger().info(f'  TF: {self.base_frame} -> {self.fused_frame}')
+        self.get_logger().info(f'  QoS: Best-Effort (low latency)')
+        self.get_logger().info(f'  Timestamp skew threshold: {self.timestamp_skew_threshold * 1000:.0f}ms')
 
     def imu1_callback(self, msg):
         """Store IMU1 data and attempt fusion."""
@@ -242,6 +258,13 @@ class ImuFusionNode(Node):
     def _try_fuse(self):
         """Attempt to fuse IMU data if both are available."""
         if self.imu1_data is None or self.imu2_data is None:
+            return
+        
+        # Timestamp gating: check timestamp skew between IMU1 and IMU2 (Task 12)
+        t1 = self.imu1_data.header.stamp.sec + self.imu1_data.header.stamp.nanosec * 1e-9
+        t2 = self.imu2_data.header.stamp.sec + self.imu2_data.header.stamp.nanosec * 1e-9
+        if abs(t1 - t2) > self.timestamp_skew_threshold:
+            # Skip fusion if timestamp skew is too large
             return
         
         # Extract quaternions

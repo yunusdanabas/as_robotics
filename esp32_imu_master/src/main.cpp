@@ -27,6 +27,10 @@
 #include <rclc/executor.h>
 #include <sensor_msgs/msg/imu.h>
 
+#include "freertos/FreeRTOS.h"
+#include "freertos/semphr.h"
+#include "freertos/task.h"
+
 #if POSITION_MODE
 #include <nav_msgs/msg/odometry.h>
 #include <micro_ros_utilities/string_utilities.h>
@@ -38,6 +42,9 @@
 
 // Diagnostic logging (optional, controlled by ENABLE_DIAGNOSTIC_LOGGING flag)
 #include "imu_diagnostics.h"
+
+// Centralized configuration constants
+#include "imu_config.h"
 
 // Default value for BLOCKING_STATUS_CHECK flag (0 = non-blocking, 1 = blocking)
 // When non-blocking, status errors are logged but data continues to publish
@@ -54,6 +61,64 @@
 
 // WiFi configuration (create wifi_credentials.h from wifi_config.h)
 #include "wifi_config.h"
+
+// ============================================================================
+// Lock-Free Sensor Cache for FreeRTOS Task
+// ============================================================================
+
+/**
+ * Structure to hold cached sensor data from FreeRTOS polling task.
+ * Uses volatile for cache coherency between cores.
+ */
+struct ImuSampleCache {
+    float qw, qx, qy, qz;           // Quaternion components
+    float gyro_x, gyro_y, gyro_z;   // Gyroscope (rad/s)
+    float accel_x, accel_y, accel_z; // Linear acceleration (m/s^2)
+    float accel_raw_x, accel_raw_y, accel_raw_z; // Raw acceleration (includes gravity)
+    uint32_t timestamp_ms;           // Sample timestamp
+    volatile bool valid;             // Data validity flag
+    volatile bool updated;           // New data available flag
+};
+
+// Global sensor caches (accessed by sensor task and timer callback)
+volatile ImuSampleCache bno_cache = {
+    1.0f, 0.0f, 0.0f, 0.0f,                // Quaternion
+    0.0f, 0.0f, 0.0f,                      // Gyro
+    0.0f, 0.0f, 0.0f,                      // Linear accel
+    0.0f, 0.0f, 0.0f,                      // Raw accel
+    0, false, false};
+#if DUAL_IMU_MODE
+volatile ImuSampleCache mpu_cache = {
+    1.0f, 0.0f, 0.0f, 0.0f,
+    0.0f, 0.0f, 0.0f,
+    0.0f, 0.0f, 0.0f,
+    0.0f, 0.0f, 0.0f,
+    0, false, false};
+#endif
+
+// FreeRTOS task handle
+TaskHandle_t sensorTaskHandle = NULL;
+
+// Mutex guarding shared I2C bus transactions (BNO055 + MPU6050)
+static SemaphoreHandle_t bno_i2c_mutex = nullptr;
+
+inline void lock_bno_i2c() {
+  if (bno_i2c_mutex != nullptr) {
+    xSemaphoreTake(bno_i2c_mutex, portMAX_DELAY);
+  }
+}
+
+inline void unlock_bno_i2c() {
+  if (bno_i2c_mutex != nullptr) {
+    xSemaphoreGive(bno_i2c_mutex);
+  }
+}
+
+// Error counter for micro-ROS publish failures (non-blocking)
+volatile uint32_t micro_ros_error_count = 0;
+
+// Timestamp for variable dt calculation
+volatile uint32_t last_sensor_poll_us = 0;
 
 // micro-ROS objects
 #if DUAL_IMU_MODE
@@ -88,8 +153,8 @@ rcl_allocator_t allocator;
 rcl_node_t node;
 rcl_timer_t timer;
 
-// BNO055 sensor object
-Adafruit_BNO055 bno = Adafruit_BNO055(55, 0x28);
+// BNO055 sensor object (using address from imu_config.h)
+Adafruit_BNO055 bno = Adafruit_BNO055(55, BNO055_I2C_ADDR);
 
 /**
  * Read BNO055 quaternion with validation and retry logic
@@ -100,7 +165,9 @@ Adafruit_BNO055 bno = Adafruit_BNO055(55, 0x28);
  */
 bool read_bno055_quaternion_safe(Adafruit_BNO055& bno, imu::Quaternion& quat, int max_retries) {
     for (int attempt = 0; attempt < max_retries; attempt++) {
+        lock_bno_i2c();
         quat = bno.getQuat();
+        unlock_bno_i2c();
         
         // Check for all-zero quaternion
         if (quat.w() == 0.0f && quat.x() == 0.0f && 
@@ -140,12 +207,13 @@ bool read_bno055_quaternion_safe(Adafruit_BNO055& bno, imu::Quaternion& quat, in
     return false;  // Failed after all retries
 }
 
-// Grace period after initialization (3 seconds) - allow sensor to stabilize
+// Grace period after initialization - allow sensor to stabilize
 static uint32_t bno055_init_time_ms = 0;
-static const uint32_t BNO055_GRACE_PERIOD_MS = 3000;  // 3 seconds
 
-// Status check interval - only check every N milliseconds to avoid I2C overhead
-static const uint32_t STATUS_CHECK_INTERVAL_MS = 10000;  // Check every 10 seconds (reduced from 1s for performance)
+// Verbose debug flag - set to 1 to enable status logging (blocking)
+#ifndef VERBOSE_STATUS_DEBUG
+#define VERBOSE_STATUS_DEBUG 0
+#endif
 
 /**
  * Check BNO055 status register for fusion errors
@@ -158,8 +226,10 @@ bool check_bno055_status(Adafruit_BNO055& bno) {
     static uint32_t last_check_ms = 0;
     static bool last_status_ok = true;
     static uint8_t consecutive_errors = 0;
+#if VERBOSE_STATUS_DEBUG
     static uint32_t last_status_log_ms = 0;
     static bool first_log = true;
+#endif
     
     uint32_t now_ms = millis();
     
@@ -182,12 +252,16 @@ bool check_bno055_status(Adafruit_BNO055& bno) {
     uint8_t system_status, self_test_result, system_error;
     
     // Read status (I2C operation - only happens once per STATUS_CHECK_INTERVAL_MS)
+    lock_bno_i2c();
     bno.getSystemStatus(&system_status, &self_test_result, &system_error);
+    unlock_bno_i2c();
     
     // Retry once if we get suspicious values (might be I2C glitch)
     if (system_error == 0xFF || system_error > 0x0A) {
         delay(1);  // Brief delay before retry
+        lock_bno_i2c();
         bno.getSystemStatus(&system_status, &self_test_result, &system_error);
+        unlock_bno_i2c();
     }
     
     // Check for errors
@@ -199,7 +273,8 @@ bool check_bno055_status(Adafruit_BNO055& bno) {
         consecutive_errors = 0;
     }
     
-    // Log status periodically or on error
+    // Log status periodically or on error (only if VERBOSE_STATUS_DEBUG enabled)
+#if VERBOSE_STATUS_DEBUG
     bool should_log = first_log || (now_ms - last_status_log_ms > 10000);
     if (should_log || error_detected) {
         Serial.printf("[STATUS] sys=%d self_test=%d error=%d grace=%d elapsed=%lu consec_errors=%d\n", 
@@ -210,11 +285,14 @@ bool check_bno055_status(Adafruit_BNO055& bno) {
         last_status_log_ms = now_ms;
         first_log = false;
     }
+#endif
     
     // Only fail on persistent errors (3+ consecutive checks with errors)
     if (error_detected && consecutive_errors >= 3) {
+#if VERBOSE_STATUS_DEBUG
         Serial.printf("[STATUS ERROR] BNO055 system_error=%d (persistent, %d consecutive)\n", 
                       system_error, consecutive_errors);
+#endif
         last_status_ok = false;
         return false;
     }
@@ -420,9 +498,9 @@ bool wifi_connected = false;
 // LED pin for status indication
 const int LED_PIN = 2;
 
-// Error macro
+// Error macro - RCCHECK halts on error, RCSOFTCHECK increments counter (non-blocking)
 #define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){error_loop();}}
-#define RCSOFTCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){}}
+#define RCSOFTCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){ micro_ros_error_count++; }}
 
 // Forward declarations
 bool init_bno055();
@@ -499,8 +577,8 @@ bool init_bno055() {
 bool init_mpu6050() {
   Serial.println("Initializing MPU6050...");
   
-  if (!mpu.begin(0x68)) {
-    Serial.println("WARNING: MPU6050 not found at 0x68");
+  if (!mpu.begin(MPU6050_I2C_ADDR)) {
+    Serial.println("WARNING: MPU6050 not found at configured address");
     return false;
   }
   
@@ -518,19 +596,155 @@ bool init_mpu6050() {
 
 #endif  // DUAL_IMU_MODE
 
+// Static frame_id arrays to avoid dynamic allocation
+static char frame_id_imu_link[] = "imu_link";
+static char frame_id_imu1_link[] = "imu1_link";
+static char frame_id_imu2_link[] = "imu2_link";
+static char frame_id_imu_fused_link[] = "imu_fused_link";
+
 /**
- * Fill IMU message with common fields
+ * Fill IMU message header with cached timestamp
+ * @param msg IMU message to fill
+ * @param frame_id Static frame_id string
+ * @param epoch_millis Cached timestamp from rmw_uros_epoch_millis()
  */
-void fill_imu_msg_header(sensor_msgs__msg__Imu& msg, const char* frame_id) {
-  uint64_t epoch_millis = rmw_uros_epoch_millis();
+void fill_imu_msg_header_cached(sensor_msgs__msg__Imu& msg, char* frame_id, uint64_t epoch_millis) {
   msg.header.stamp.sec = epoch_millis / 1000;
   msg.header.stamp.nanosec = (epoch_millis % 1000) * 1000000;
-  msg.header.frame_id.data = (char*)frame_id;
+  msg.header.frame_id.data = frame_id;
   msg.header.frame_id.size = strlen(frame_id);
+  msg.header.frame_id.capacity = strlen(frame_id) + 1;
+}
+
+// ============================================================================
+// FreeRTOS Sensor Polling Task
+// ============================================================================
+
+// Spinlock for cache access (must be declared before use)
+static portMUX_TYPE spinlock = portMUX_INITIALIZER_UNLOCKED;
+
+/**
+ * High-frequency sensor polling task (runs on Core 1)
+ * Decouples I2C reads from timer callback for deterministic timing.
+ */
+void sensor_polling_task(void* param) {
+    (void)param;
+    TickType_t lastWakeTime = xTaskGetTickCount();
+    
+    while (true) {
+        uint32_t now_us = micros();
+        uint32_t now_ms = millis();
+        
+        // Calculate dt for variable time-step filter
+        float dt = 0.002f;  // Default 2ms (500Hz)
+        if (last_sensor_poll_us > 0) {
+            dt = (now_us - last_sensor_poll_us) / 1000000.0f;
+            // Clamp dt to safe bounds
+            if (dt < 0.0001f) dt = 0.0001f;
+            if (dt > 0.05f) dt = 0.05f;
+        }
+        last_sensor_poll_us = now_us;
+        
+        // --- Poll BNO055 ---
+        if (sensor_initialized) {
+            lock_bno_i2c();
+            imu::Quaternion q = bno.getQuat();
+            unlock_bno_i2c();
+            
+            // Validate quaternion
+            bool valid = true;
+            if (q.w() == 0.0f && q.x() == 0.0f && q.y() == 0.0f && q.z() == 0.0f) {
+                valid = false;
+            }
+            if (!std::isfinite(q.w()) || !std::isfinite(q.x()) ||
+                !std::isfinite(q.y()) || !std::isfinite(q.z())) {
+                valid = false;
+            }
+            float norm = sqrtf(q.w() * q.w() + q.x() * q.x() + q.y() * q.y() + q.z() * q.z());
+            if (norm < 0.1f || norm > 2.0f) {
+                valid = false;
+            }
+            
+            if (valid) {
+                // Get gyro and accel
+                lock_bno_i2c();
+                imu::Vector<3> gyro = bno.getVector(Adafruit_BNO055::VECTOR_GYROSCOPE);
+                imu::Vector<3> accel_linear = bno.getVector(Adafruit_BNO055::VECTOR_LINEARACCEL);
+                imu::Vector<3> accel_raw = bno.getVector(Adafruit_BNO055::VECTOR_ACCELEROMETER);
+                unlock_bno_i2c();
+                
+                // Update cache atomically (disable interrupts briefly)
+                portENTER_CRITICAL(&spinlock);
+                bno_cache.qw = q.w();
+                bno_cache.qx = q.x();
+                bno_cache.qy = q.y();
+                bno_cache.qz = q.z();
+                bno_cache.gyro_x = gyro.x();
+                bno_cache.gyro_y = gyro.y();
+                bno_cache.gyro_z = gyro.z();
+                bno_cache.accel_x = accel_linear.x();
+                bno_cache.accel_y = accel_linear.y();
+                bno_cache.accel_z = accel_linear.z();
+                bno_cache.accel_raw_x = accel_raw.x();
+                bno_cache.accel_raw_y = accel_raw.y();
+                bno_cache.accel_raw_z = accel_raw.z();
+                bno_cache.timestamp_ms = now_ms;
+                bno_cache.valid = true;
+                bno_cache.updated = true;
+                portEXIT_CRITICAL(&spinlock);
+            }
+        }
+        
+#if DUAL_IMU_MODE
+        // --- Poll MPU6050 ---
+        if (mpu_initialized) {
+            sensors_event_t accel_event, gyro_event, temp_event;
+            lock_bno_i2c();
+            mpu.getEvent(&accel_event, &gyro_event, &temp_event);
+            unlock_bno_i2c();
+            
+            float gx = gyro_event.gyro.x;
+            float gy = gyro_event.gyro.y;
+            float gz = gyro_event.gyro.z;
+            float ax = accel_event.acceleration.x;
+            float ay = accel_event.acceleration.y;
+            float az = accel_event.acceleration.z;
+            
+            // Update Madgwick filter with variable dt
+            madgwick_filter.updateIMU(gx, gy, gz, ax, ay, az, dt);
+            
+            float qw, qx, qy, qz;
+            madgwick_filter.getQuaternion(&qw, &qx, &qy, &qz);
+            
+            // Update cache atomically
+            portENTER_CRITICAL(&spinlock);
+            mpu_cache.qw = qw;
+            mpu_cache.qx = qx;
+            mpu_cache.qy = qy;
+            mpu_cache.qz = qz;
+            mpu_cache.gyro_x = gx;
+            mpu_cache.gyro_y = gy;
+            mpu_cache.gyro_z = gz;
+            mpu_cache.accel_x = ax;
+            mpu_cache.accel_y = ay;
+            mpu_cache.accel_z = az;
+            mpu_cache.accel_raw_x = ax;
+            mpu_cache.accel_raw_y = ay;
+            mpu_cache.accel_raw_z = az;
+            mpu_cache.timestamp_ms = now_ms;
+            mpu_cache.valid = true;
+            mpu_cache.updated = true;
+            portEXIT_CRITICAL(&spinlock);
+        }
+#endif
+        
+        // Sleep until next poll (target 500Hz = 2ms period)
+        vTaskDelayUntil(&lastWakeTime, pdMS_TO_TICKS(SENSOR_POLL_PERIOD_MS));
+    }
 }
 
 
-// Timer callback - publishes IMU data
+// Timer callback - publishes IMU data from cache (non-blocking)
 void timer_callback(rcl_timer_t * timer, int64_t last_call_time) {
   RCLC_UNUSED(last_call_time);
   
@@ -545,21 +759,45 @@ void timer_callback(rcl_timer_t * timer, int64_t last_call_time) {
 #endif
     return;
   }
+  
+  // Cache timestamp once for all messages in this cycle (Task 5)
+  uint64_t epoch_millis = rmw_uros_epoch_millis();
+  uint32_t now_ms = millis();
 
 #if DUAL_IMU_MODE
-  // ===== DUAL IMU MODE =====
+  // ===== DUAL IMU MODE (Cache-based, non-blocking) =====
   
-  // --- IMU1: BNO055 ---
-  imu::Quaternion bno_quat;
-  if (!read_bno055_quaternion_safe(bno, bno_quat)) {
-    // Invalid read - skip this sample
+  // --- IMU1: BNO055 (from cache) ---
+  float bno_qw, bno_qx, bno_qy, bno_qz;
+  float bno_gx, bno_gy, bno_gz;
+  float bno_ax, bno_ay, bno_az;
+  uint32_t bno_ts;
+  bool bno_valid;
+  
+  // Read from cache atomically
+  portENTER_CRITICAL(&spinlock);
+  bno_qw = bno_cache.qw;
+  bno_qx = bno_cache.qx;
+  bno_qy = bno_cache.qy;
+  bno_qz = bno_cache.qz;
+  bno_gx = bno_cache.gyro_x;
+  bno_gy = bno_cache.gyro_y;
+  bno_gz = bno_cache.gyro_z;
+  bno_ax = bno_cache.accel_x;
+  bno_ay = bno_cache.accel_y;
+  bno_az = bno_cache.accel_z;
+  bno_ts = bno_cache.timestamp_ms;
+  bno_valid = bno_cache.valid;
+  bno_cache.updated = false;
+  portEXIT_CRITICAL(&spinlock);
+  
+  // Check cache staleness
+  if (!bno_valid || (now_ms - bno_ts > CACHE_STALE_THRESHOLD_MS)) {
+    // Cache is stale or invalid - skip this sample
     return;
   }
   
-  imu::Vector<3> bno_gyro = bno.getVector(Adafruit_BNO055::VECTOR_GYROSCOPE);
-  imu::Vector<3> bno_accel = bno.getVector(Adafruit_BNO055::VECTOR_LINEARACCEL);
-  
-  Quaternion q1_raw(bno_quat.w(), bno_quat.x(), bno_quat.y(), bno_quat.z());
+  Quaternion q1_raw(bno_qw, bno_qx, bno_qy, bno_qz);
   
   // Hemisphere alignment: align to previous raw quaternion (prevents sign flips)
   if (prev_bno_raw_initialized_dual) {
@@ -570,7 +808,7 @@ void timer_callback(rcl_timer_t * timer, int64_t last_call_time) {
   prev_bno_raw_quat_dual = q1_raw;
   
   Quaternion q1 = q1_raw;
-  Vec3 gyro1(bno_gyro.x(), bno_gyro.y(), bno_gyro.z());
+  Vec3 gyro1(bno_gx, bno_gy, bno_gz);
   bool q1_valid = tracker_imu1.process(q1, &gyro1);
   
   // Diagnostic logging FIRST (before status check) to ensure visibility
@@ -598,88 +836,98 @@ void timer_callback(rcl_timer_t * timer, int64_t last_call_time) {
 #endif
   
   
-  // Fill IMU1 message
-  fill_imu_msg_header(imu1_msg, "imu1_link");
+  // Fill IMU1 message (using cached timestamp and static frame_id)
+  fill_imu_msg_header_cached(imu1_msg, frame_id_imu1_link, epoch_millis);
   imu1_msg.orientation.x = q1.x;
   imu1_msg.orientation.y = q1.y;
   imu1_msg.orientation.z = q1.z;
   imu1_msg.orientation.w = q1.w;
-  imu1_msg.angular_velocity.x = bno_gyro.x();
-  imu1_msg.angular_velocity.y = bno_gyro.y();
-  imu1_msg.angular_velocity.z = bno_gyro.z();
-  imu1_msg.linear_acceleration.x = bno_accel.x();
-  imu1_msg.linear_acceleration.y = bno_accel.y();
-  imu1_msg.linear_acceleration.z = bno_accel.z();
+  imu1_msg.angular_velocity.x = bno_gx;
+  imu1_msg.angular_velocity.y = bno_gy;
+  imu1_msg.angular_velocity.z = bno_gz;
+  imu1_msg.linear_acceleration.x = bno_ax;
+  imu1_msg.linear_acceleration.y = bno_ay;
+  imu1_msg.linear_acceleration.z = bno_az;
   
   // Publish IMU1
   if (q1_valid) {
     RCSOFTCHECK(rcl_publish(&publisher_imu1, &imu1_msg, NULL));
   }
   
-  // --- IMU2: MPU6050 + Magnetometer (Madgwick fusion) ---
+  // --- IMU2: MPU6050 (from cache) ---
   Quaternion q2;
   bool q2_valid = false;
   
   if (mpu_initialized) {
-    sensors_event_t accel_event, gyro_event, temp_event;
-    mpu.getEvent(&accel_event, &gyro_event, &temp_event);
+    float mpu_qw, mpu_qx, mpu_qy, mpu_qz;
+    float mpu_gx, mpu_gy, mpu_gz;
+    float mpu_ax, mpu_ay, mpu_az;
+    uint32_t mpu_ts;
+    bool mpu_valid;
     
-    // Update Madgwick filter (IMU only - magnetometer disabled to avoid I2C errors)
-    float gx = gyro_event.gyro.x;  // Already in rad/s
-    float gy = gyro_event.gyro.y;
-    float gz = gyro_event.gyro.z;
-    float ax = accel_event.acceleration.x;
-    float ay = accel_event.acceleration.y;
-    float az = accel_event.acceleration.z;
+    // Read from cache atomically
+    portENTER_CRITICAL(&spinlock);
+    mpu_qw = mpu_cache.qw;
+    mpu_qx = mpu_cache.qx;
+    mpu_qy = mpu_cache.qy;
+    mpu_qz = mpu_cache.qz;
+    mpu_gx = mpu_cache.gyro_x;
+    mpu_gy = mpu_cache.gyro_y;
+    mpu_gz = mpu_cache.gyro_z;
+    mpu_ax = mpu_cache.accel_x;
+    mpu_ay = mpu_cache.accel_y;
+    mpu_az = mpu_cache.accel_z;
+    mpu_ts = mpu_cache.timestamp_ms;
+    mpu_valid = mpu_cache.valid;
+    mpu_cache.updated = false;
+    portEXIT_CRITICAL(&spinlock);
     
-    madgwick_filter.updateIMU(gx, gy, gz, ax, ay, az);
-    
-    // Get quaternion from filter
-    float qw, qx, qy, qz;
-    madgwick_filter.getQuaternion(&qw, &qx, &qy, &qz);
-    Quaternion q2_raw(qw, qx, qy, qz);
-    
-    // Hemisphere alignment: align to previous raw quaternion (prevents sign flips)
-    if (prev_mpu_raw_initialized) {
-      alignHemisphere(q2_raw, prev_mpu_raw_quat);
-    } else {
-      prev_mpu_raw_initialized = true;
-    }
-    prev_mpu_raw_quat = q2_raw;
-    
-    q2 = q2_raw;
-    Vec3 gyro2(gx, gy, gz);
-    q2_valid = tracker_imu2.process(q2, &gyro2);
-    
-    // Diagnostic logging (after processing to include prediction error)
+    // Check cache staleness
+    if (mpu_valid && (now_ms - mpu_ts <= CACHE_STALE_THRESHOLD_MS)) {
+      Quaternion q2_raw(mpu_qw, mpu_qx, mpu_qy, mpu_qz);
+      
+      // Hemisphere alignment: align to previous raw quaternion (prevents sign flips)
+      if (prev_mpu_raw_initialized) {
+        alignHemisphere(q2_raw, prev_mpu_raw_quat);
+      } else {
+        prev_mpu_raw_initialized = true;
+      }
+      prev_mpu_raw_quat = q2_raw;
+      
+      q2 = q2_raw;
+      Vec3 gyro2(mpu_gx, mpu_gy, mpu_gz);
+      q2_valid = tracker_imu2.process(q2, &gyro2);
+      
+      // Diagnostic logging (after processing to include prediction error)
 #if ENABLE_DIAGNOSTIC_LOGGING
-    float gyro_error_mpu = tracker_imu2.get_last_prediction_error();
-    log_diagnostic_data("MPU6050", diag_state_mpu, q2_raw,
-                        diag_state_mpu.initialized ? &diag_state_mpu.prev_raw_quat_valid : nullptr,
-                        nullptr, gyro_error_mpu,
-                        &q2,  // q_proc
-                        diag_state_mpu.initialized ? &diag_state_mpu.prev_proc_quat : nullptr,  // q_prev_proc
-                        tracker_imu2.smoothing_active,
-                        tracker_imu2.smoothing_samples);
+      float gyro_error_mpu = tracker_imu2.get_last_prediction_error();
+      log_diagnostic_data("MPU6050", diag_state_mpu, q2_raw,
+                          diag_state_mpu.initialized ? &diag_state_mpu.prev_raw_quat_valid : nullptr,
+                          nullptr, gyro_error_mpu,
+                          &q2,  // q_proc
+                          diag_state_mpu.initialized ? &diag_state_mpu.prev_proc_quat : nullptr,  // q_prev_proc
+                          tracker_imu2.smoothing_active,
+                          tracker_imu2.smoothing_samples);
 #endif
-    
-    
-    // Fill IMU2 message
-    fill_imu_msg_header(imu2_msg, "imu2_link");
-    imu2_msg.orientation.x = q2.x;
-    imu2_msg.orientation.y = q2.y;
-    imu2_msg.orientation.z = q2.z;
-    imu2_msg.orientation.w = q2.w;
-    imu2_msg.angular_velocity.x = gx;
-    imu2_msg.angular_velocity.y = gy;
-    imu2_msg.angular_velocity.z = gz;
-    imu2_msg.linear_acceleration.x = ax;
-    imu2_msg.linear_acceleration.y = ay;
-    imu2_msg.linear_acceleration.z = az;
-    
-    // Publish IMU2
-    if (q2_valid) {
-      RCSOFTCHECK(rcl_publish(&publisher_imu2, &imu2_msg, NULL));
+      
+      
+      // Fill IMU2 message (using cached timestamp and static frame_id)
+      fill_imu_msg_header_cached(imu2_msg, frame_id_imu2_link, epoch_millis);
+      imu2_msg.orientation.x = q2.x;
+      imu2_msg.orientation.y = q2.y;
+      imu2_msg.orientation.z = q2.z;
+      imu2_msg.orientation.w = q2.w;
+      imu2_msg.angular_velocity.x = mpu_gx;
+      imu2_msg.angular_velocity.y = mpu_gy;
+      imu2_msg.angular_velocity.z = mpu_gz;
+      imu2_msg.linear_acceleration.x = mpu_ax;
+      imu2_msg.linear_acceleration.y = mpu_ay;
+      imu2_msg.linear_acceleration.z = mpu_az;
+      
+      // Publish IMU2
+      if (q2_valid) {
+        RCSOFTCHECK(rcl_publish(&publisher_imu2, &imu2_msg, NULL));
+      }
     }
   }
   
@@ -696,7 +944,7 @@ void timer_callback(rcl_timer_t * timer, int64_t last_call_time) {
     prev_fused_quat = q_fused;
     
     // Apply sign continuity to fused quaternion (use BNO055 gyro for prediction)
-    Vec3 gyro_fused(bno_gyro.x(), bno_gyro.y(), bno_gyro.z());
+    Vec3 gyro_fused(bno_gx, bno_gy, bno_gz);
     tracker_fused.process(q_fused, &gyro_fused);
     
     // Diagnostic logging for fused quaternion (after processing to include prediction error)
@@ -711,56 +959,73 @@ void timer_callback(rcl_timer_t * timer, int64_t last_call_time) {
                         tracker_fused.smoothing_samples);
 #endif
     
-    // Fill fused message
-    fill_imu_msg_header(fused_msg, "imu_fused_link");
+    // Fill fused message (using cached timestamp and static frame_id)
+    fill_imu_msg_header_cached(fused_msg, frame_id_imu_fused_link, epoch_millis);
     fused_msg.orientation.x = q_fused.x;
     fused_msg.orientation.y = q_fused.y;
     fused_msg.orientation.z = q_fused.z;
     fused_msg.orientation.w = q_fused.w;
     
-    // Use BNO055 angular velocity and acceleration for fused message
-    fused_msg.angular_velocity.x = bno_gyro.x();
-    fused_msg.angular_velocity.y = bno_gyro.y();
-    fused_msg.angular_velocity.z = bno_gyro.z();
-    fused_msg.linear_acceleration.x = bno_accel.x();
-    fused_msg.linear_acceleration.y = bno_accel.y();
-    fused_msg.linear_acceleration.z = bno_accel.z();
+    // Use BNO055 angular velocity and acceleration for fused message (from cache)
+    fused_msg.angular_velocity.x = bno_gx;
+    fused_msg.angular_velocity.y = bno_gy;
+    fused_msg.angular_velocity.z = bno_gz;
+    fused_msg.linear_acceleration.x = bno_ax;
+    fused_msg.linear_acceleration.y = bno_ay;
+    fused_msg.linear_acceleration.z = bno_az;
     
     // Publish fused
     RCSOFTCHECK(rcl_publish(&publisher_fused, &fused_msg, NULL));
   }
   
 #else
-  // ===== SINGLE IMU MODE =====
+  // ===== SINGLE IMU MODE (Cache-based, non-blocking) =====
   
-  // Get quaternion data from BNO055 (with validation and retry)
-  imu::Quaternion bno_quat;
-  if (!read_bno055_quaternion_safe(bno, bno_quat)) {
-    // Invalid read - skip this sample
+  // Read from cache atomically
+  float bno_qw, bno_qx, bno_qy, bno_qz;
+  float bno_gx, bno_gy, bno_gz;
+  float bno_ax, bno_ay, bno_az;
+#if POSITION_MODE
+  float bno_raw_ax, bno_raw_ay, bno_raw_az;
+#endif
+  uint32_t bno_ts;
+  bool bno_valid;
+  
+  portENTER_CRITICAL(&spinlock);
+  bno_qw = bno_cache.qw;
+  bno_qx = bno_cache.qx;
+  bno_qy = bno_cache.qy;
+  bno_qz = bno_cache.qz;
+  bno_gx = bno_cache.gyro_x;
+  bno_gy = bno_cache.gyro_y;
+  bno_gz = bno_cache.gyro_z;
+  bno_ax = bno_cache.accel_x;
+  bno_ay = bno_cache.accel_y;
+  bno_az = bno_cache.accel_z;
+#if POSITION_MODE
+  bno_raw_ax = bno_cache.accel_raw_x;
+  bno_raw_ay = bno_cache.accel_raw_y;
+  bno_raw_az = bno_cache.accel_raw_z;
+#endif
+  bno_ts = bno_cache.timestamp_ms;
+  bno_valid = bno_cache.valid;
+  bno_cache.updated = false;
+  portEXIT_CRITICAL(&spinlock);
+  
+  // Check cache validity and staleness
+  if (!bno_valid || (now_ms - bno_ts > CACHE_STALE_THRESHOLD_MS)) {
 #if ENABLE_DIAGNOSTIC_LOGGING
     static uint32_t last_fail_log_ms = 0;
-    uint32_t now_ms = millis();
     if (now_ms - last_fail_log_ms > 1000) {  // Log failure every 1 second max
-      Serial.printf("[TIMER] BNO055 read failed\n");
+      Serial.printf("[TIMER] BNO055 cache stale or invalid\n");
       last_fail_log_ms = now_ms;
     }
 #endif
     return;
   }
   
-  // Get angular velocity (gyroscope)
-  imu::Vector<3> gyro = bno.getVector(Adafruit_BNO055::VECTOR_GYROSCOPE);
-  
-  // Get linear acceleration (gravity-compensated) for IMU message
-  imu::Vector<3> accel_linear = bno.getVector(Adafruit_BNO055::VECTOR_LINEARACCEL);
-
-#if POSITION_MODE
-  // Get raw acceleration (includes gravity) for integration
-  imu::Vector<3> accel_raw = bno.getVector(Adafruit_BNO055::VECTOR_ACCELEROMETER);
-#endif
-  
   // Raw quaternion before processing
-  Quaternion q_raw(bno_quat.w(), bno_quat.x(), bno_quat.y(), bno_quat.z());
+  Quaternion q_raw(bno_qw, bno_qx, bno_qy, bno_qz);
   
   // Hemisphere alignment: align to previous raw quaternion (prevents sign flips)
   if (prev_bno_raw_initialized) {
@@ -772,7 +1037,7 @@ void timer_callback(rcl_timer_t * timer, int64_t last_call_time) {
   
   // Process quaternion for sign continuity and jump smoothing (prevents teleportation)
   Quaternion q = q_raw;
-  Vec3 gyro_single(gyro.x(), gyro.y(), gyro.z());
+  Vec3 gyro_single(bno_gx, bno_gy, bno_gz);
   bool q_valid = quat_tracker.process(q, &gyro_single);
   
   // Diagnostic logging FIRST (before status check) to ensure visibility
@@ -813,12 +1078,8 @@ void timer_callback(rcl_timer_t * timer, int64_t last_call_time) {
     return;
   }
   
-  // Fill the IMU message
-  uint64_t epoch_millis = rmw_uros_epoch_millis();
-  imu_msg.header.stamp.sec = epoch_millis / 1000;
-  imu_msg.header.stamp.nanosec = (epoch_millis % 1000) * 1000000;
-  imu_msg.header.frame_id.data = (char*)"imu_link";
-  imu_msg.header.frame_id.size = strlen("imu_link");
+  // Fill the IMU message (using cached timestamp and static frame_id)
+  fill_imu_msg_header_cached(imu_msg, frame_id_imu_link, epoch_millis);
   
   // Orientation (quaternion) - processed with sign continuity and jump smoothing
   imu_msg.orientation.x = q.x;
@@ -826,21 +1087,25 @@ void timer_callback(rcl_timer_t * timer, int64_t last_call_time) {
   imu_msg.orientation.z = q.z;
   imu_msg.orientation.w = q.w;
   
-  // Angular velocity (rad/s)
-  imu_msg.angular_velocity.x = gyro.x();
-  imu_msg.angular_velocity.y = gyro.y();
-  imu_msg.angular_velocity.z = gyro.z();
+  // Angular velocity (rad/s) - from cache
+  imu_msg.angular_velocity.x = bno_gx;
+  imu_msg.angular_velocity.y = bno_gy;
+  imu_msg.angular_velocity.z = bno_gz;
   
-  // Linear acceleration (m/s^2)
-  imu_msg.linear_acceleration.x = accel_linear.x();
-  imu_msg.linear_acceleration.y = accel_linear.y();
-  imu_msg.linear_acceleration.z = accel_linear.z();
+  // Linear acceleration (m/s^2) - from cache
+  imu_msg.linear_acceleration.x = bno_ax;
+  imu_msg.linear_acceleration.y = bno_ay;
+  imu_msg.linear_acceleration.z = bno_az;
   
   // Publish the IMU message
   RCSOFTCHECK(rcl_publish(&publisher, &imu_msg, NULL));
 
 #if POSITION_MODE
-    update_position_estimate(bno_quat, accel_raw, gyro, millis());
+    // For position mode, create imu::Quaternion and vectors from cache
+    imu::Quaternion bno_quat_pos(bno_qw, bno_qx, bno_qy, bno_qz);
+    imu::Vector<3> accel_raw_pos(bno_raw_ax, bno_raw_ay, bno_raw_az);
+    imu::Vector<3> gyro_pos(bno_gx, bno_gy, bno_gz);
+    update_position_estimate(bno_quat_pos, accel_raw_pos, gyro_pos, now_ms);
 
     if (pos_state.bias_ready && pos_state.initialized) {
       odom_msg.header.stamp.sec = imu_msg.header.stamp.sec;
@@ -855,9 +1120,9 @@ void timer_callback(rcl_timer_t * timer, int64_t last_call_time) {
       odom_msg.twist.twist.linear.x = pos_state.velocity[0];
       odom_msg.twist.twist.linear.y = pos_state.velocity[1];
       odom_msg.twist.twist.linear.z = pos_state.velocity[2];
-      odom_msg.twist.twist.angular.x = gyro.x();
-      odom_msg.twist.twist.angular.y = gyro.y();
-      odom_msg.twist.twist.angular.z = gyro.z();
+      odom_msg.twist.twist.angular.x = bno_gx;
+      odom_msg.twist.twist.angular.y = bno_gy;
+      odom_msg.twist.twist.angular.z = bno_gz;
 
       RCSOFTCHECK(rcl_publish(&odom_publisher, &odom_msg, NULL));
     }
@@ -898,6 +1163,18 @@ void setup() {
   Wire.begin();
   Wire.setClock(400000);  // 400kHz (fast mode) - 4x faster than 100kHz
   
+  // Create mutex guarding BNO055 I2C transactions
+  bno_i2c_mutex = xSemaphoreCreateMutex();
+  if (bno_i2c_mutex == nullptr) {
+    Serial.println("ERROR: Failed to create BNO055 I2C mutex!");
+    while (1) {
+      digitalWrite(LED_PIN, HIGH);
+      delay(200);
+      digitalWrite(LED_PIN, LOW);
+      delay(200);
+    }
+  }
+  
   // Initialize BNO055 sensor (required for both modes)
   if (!init_bno055()) {
     Serial.println("ERROR: Failed to initialize BNO055. Check wiring!");
@@ -918,14 +1195,26 @@ void setup() {
   mpu_initialized = init_mpu6050();
   
   // Initialize Fast Madgwick filter with high beta for BNO055-like responsiveness
-  madgwick_filter.begin(FILTER_UPDATE_RATE, MADGWICK_BETA);
+  madgwick_filter.begin(FILTER_UPDATE_RATE_HZ, MADGWICK_DEFAULT_BETA);
   Serial.printf("Fast Madgwick filter initialized (rate=%.0f Hz, beta=%.2f)\n", 
-                FILTER_UPDATE_RATE, MADGWICK_BETA);
+                FILTER_UPDATE_RATE_HZ, MADGWICK_DEFAULT_BETA);
   
   if (!mpu_initialized) {
     Serial.println("WARNING: Running in degraded mode (BNO055 only)");
   }
 #endif
+
+  // Create FreeRTOS sensor polling task on Core 1 (WiFi runs on Core 0)
+  xTaskCreatePinnedToCore(
+    sensor_polling_task,        // Task function
+    "SensorTask",               // Task name
+    SENSOR_TASK_STACK_SIZE,     // Stack size
+    NULL,                       // Task parameters
+    SENSOR_TASK_PRIORITY,       // Priority
+    &sensorTaskHandle,          // Task handle
+    SENSOR_TASK_CORE            // Core to run on
+  );
+  Serial.println("[INIT] FreeRTOS sensor polling task started on Core 1");
   
 #if POSITION_MODE
   Serial.println("Initializing BMP280 sensor...");
@@ -951,7 +1240,9 @@ void setup() {
 
   // Display sensor details
   sensor_t sensor;
+  lock_bno_i2c();
   bno.getSensor(&sensor);
+  unlock_bno_i2c();
   Serial.println("------------------------------------");
   Serial.print("Sensor:       "); Serial.println(sensor.name);
   Serial.print("Driver Ver:   "); Serial.println(sensor.version);
@@ -973,7 +1264,7 @@ void setup() {
   
   // Wait for micro-ROS agent with timeout
   Serial.println("Waiting for micro-ROS agent...");
-  const int MAX_AGENT_ATTEMPTS = 30;  // 30 attempts * 500ms = 15 seconds max
+  // MAX_AGENT_ATTEMPTS is defined in imu_config.h
   int agent_attempts = 0;
   bool agent_found = false;
   
@@ -982,7 +1273,8 @@ void setup() {
     Serial.printf("  Ping attempt %d/%d... ", agent_attempts, MAX_AGENT_ATTEMPTS);
     
     // rmw_uros_ping_agent returns RMW_RET_OK if agent is reachable
-    if (rmw_uros_ping_agent(100, 1) == RMW_RET_OK) {
+    // AGENT_PING_TIMEOUT_MS and AGENT_PING_ATTEMPTS are defined in imu_config.h
+    if (rmw_uros_ping_agent(AGENT_PING_TIMEOUT_MS, AGENT_PING_ATTEMPTS) == RMW_RET_OK) {
       Serial.println("Agent found!");
       agent_found = true;
       break;
@@ -1014,43 +1306,47 @@ void setup() {
   RCCHECK(rclc_node_init_default(&node, "esp32_imu_master_wifi", "", &support));
 #endif
   
-  // Create publishers
+  // Create publishers with Best-Effort QoS for low latency (Task 6)
 #if DUAL_IMU_MODE
-  // IMU1 publisher (BNO055)
-  RCCHECK(rclc_publisher_init_default(
+  // IMU1 publisher (BNO055) - Best Effort QoS
+  RCCHECK(rclc_publisher_init_best_effort(
     &publisher_imu1,
     &node,
     ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Imu),
     "imu1_data"));
   
-  // IMU2 publisher (MPU6050)
-  RCCHECK(rclc_publisher_init_default(
+  // IMU2 publisher (MPU6050) - Best Effort QoS
+  RCCHECK(rclc_publisher_init_best_effort(
     &publisher_imu2,
     &node,
     ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Imu),
     "imu2_data"));
   
-  // Fused publisher
-  RCCHECK(rclc_publisher_init_default(
+  // Fused publisher - Best Effort QoS
+  RCCHECK(rclc_publisher_init_best_effort(
     &publisher_fused,
     &node,
     ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Imu),
     "imu_fused"));
+  
+  Serial.println("[QoS] Publishers configured with Best-Effort QoS for low latency");
   
   // Initialize messages
   memset(&imu1_msg, 0, sizeof(imu1_msg));
   memset(&imu2_msg, 0, sizeof(imu2_msg));
   memset(&fused_msg, 0, sizeof(fused_msg));
 #else
-  RCCHECK(rclc_publisher_init_default(
+  // Single IMU publisher - Best Effort QoS
+  RCCHECK(rclc_publisher_init_best_effort(
     &publisher,
     &node,
     ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Imu),
     "imu_data"));
+  Serial.println("[QoS] Publisher configured with Best-Effort QoS for low latency");
 #endif
 
 #if POSITION_MODE
-  RCCHECK(rclc_publisher_init_default(
+  RCCHECK(rclc_publisher_init_best_effort(
     &odom_publisher,
     &node,
     ROSIDL_GET_MSG_TYPE_SUPPORT(nav_msgs, msg, Odometry),
@@ -1064,13 +1360,12 @@ void setup() {
   }
 #endif
   
-  // Create timer (publish at 100 Hz to compensate for I2C and WiFi overhead)
-  // Actual rate will be lower due to I2C reads (~5-10ms each) and network latency
-  const unsigned int timer_timeout = 10;  // 10ms = 100Hz target
+  // Create timer for publishing at 100 Hz
+  // With FreeRTOS sensor task, I2C reads are decoupled - timer just reads from cache
   RCCHECK(rclc_timer_init_default(
     &timer,
     &support,
-    RCL_MS_TO_NS(timer_timeout),
+    RCL_MS_TO_NS(TIMER_PERIOD_MS),
     timer_callback));
   
   // Create executor
@@ -1121,11 +1416,11 @@ void loop() {
   }
   
   if (micro_ros_initialized) {
-    // Execute callbacks - use minimal timeout for higher throughput
-    RCSOFTCHECK(rclc_executor_spin_some(&executor, RCL_MS_TO_NS(1)));
+    // Execute callbacks with zero timeout for non-blocking polling (Task 10)
+    RCSOFTCHECK(rclc_executor_spin_some(&executor, 0));
   }
   
-  // Minimal delay to yield to other tasks (WiFi stack, etc.)
+  // Minimal delay to yield to other tasks (WiFi stack, sensor task, etc.)
   delay(1);
 }
 
